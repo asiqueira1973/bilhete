@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ dark }}" hint-size="402px,874px">
+  <div style="position: relative; height: 100%; box-sizing: border-box; background: {{ c.bg }}; font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;">
+    <div style="height: 100%; display: flex; flex-direction: column; box-sizing: border-box; padding: 52px 20px 0;">
+
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <svg width="11" height="18" viewBox="0 0 11 18" style="display: block;">
+            <path d="M9 1L2 9l7 8" fill="none" stroke="{{ c.ink }}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span style="font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Ajustes</span>
+        </div>
+        <sc-if value="{{ showCounter }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="padding: 3px 10px; border-radius: 999px; background: {{ proBg }}; font-size: 13px; font-weight: 600; color: {{ c.accent }}; font-variant-numeric: tabular-nums;">10 de 10</span>
+            <span style="padding: 3px 9px; border-radius: 7px; background: {{ proBg }}; color: {{ c.accent }}; font-size: 11px; font-weight: 700; letter-spacing: 0.3px;">PRO</span>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="padding: 6px 0 14px; font-size: 34px; font-weight: 700; letter-spacing: -0.6px; color: {{ c.ink }};">Arquivo</div>
+
+      <div style="display: flex; align-items: center; gap: 8px; height: 38px; padding: 0 12px; border-radius: 12px; background: {{ searchBg }}; opacity: {{ searchOpacity }};">
+        <svg width="16" height="16" viewBox="0 0 18 18" style="display: block; flex-shrink: 0;">
+          <circle cx="7.4" cy="7.4" r="5.6" fill="none" stroke="{{ c.ink2 }}" stroke-width="1.9"></circle>
+          <path d="M11.6 11.6L16.2 16.2" stroke="{{ c.ink2 }}" stroke-width="1.9" stroke-linecap="round"></path>
+        </svg>
+        <span style="flex: 1; font-size: 17px; color: {{ searchFg }}; letter-spacing: -0.24px;">{{ searchText }}</span>
+        <sc-if value="{{ searchPro }}" hint-placeholder-val="{{ false }}">
+          <span style="padding: 2px 8px; border-radius: 6px; background: {{ proBg }}; color: {{ c.accent }}; font-size: 11px; font-weight: 700; letter-spacing: 0.3px;">PRO</span>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ vazio }}" hint-placeholder-val="{{ false }}">
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding-bottom: 120px;">
+          <div style="font-size: 22px; color: {{ c.ink }}; letter-spacing: -0.3px;">Nada arquivado ainda.</div>
+          <div style="max-width: 280px; text-align: center; font-size: 15px; line-height: 21px; color: {{ c.ink2 }}; text-wrap: pretty;">Bilhete resolvido é bilhete arquivado.</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ temLista }}" hint-placeholder-val="{{ true }}">
+        <div style="flex: 1; min-height: 0; margin-top: 14px; overflow: auto; border-radius: 20px; background: {{ c.paper }}; box-shadow: {{ c.shadow }};">
+          <sc-for list="{{ itens }}" as="item" hint-placeholder-count="6">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 0.5px solid {{ c.hair }};">
+              <div style="flex: 1; min-width: 0; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ item.t }}</div>
+              <div style="flex-shrink: 0; font-size: 13px; color: {{ c.ink2 }};">{{ item.d }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ buscaVazia }}" hint-placeholder-val="{{ false }}">
+        <div style="flex: 1;"></div>
+      </sc-if>
+
+      <div style="display: flex; align-items: center; justify-content: center; padding: 18px 0 32px;">
+        <span style="font-size: 17px; color: {{ c.bad }}; letter-spacing: -0.24px;">Apagar tudo</span>
+      </div>
+    </div>
+
+    <sc-if value="{{ showDialog }}" hint-placeholder-val="{{ false }}">
+      <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 40px; background: rgba(10,9,8,0.4); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);">
+        <div style="width: 100%; display: flex; flex-direction: column; border-radius: 26px; overflow: hidden; background: {{ dialogBg }}; backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);">
+          <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 20px 18px; text-align: center;">
+            <div style="font-size: 17px; font-weight: 600; color: {{ c.ink }}; letter-spacing: -0.24px;">{{ dialogTitle }}</div>
+            <div style="font-size: 13px; line-height: 18px; color: {{ c.ink2 }}; text-wrap: pretty;">{{ dialogBody }}</div>
+          </div>
+          <sc-for list="{{ dialogActions }}" as="a" hint-placeholder-count="3">
+            <div style="padding: 12px 16px; border-top: 0.5px solid {{ c.hair }}; text-align: center; font-size: 17px; font-weight: {{ a.w }}; color: {{ a.c }}; letter-spacing: -0.24px;">{{ a.t }}</div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 402, &quot;height&quot;: 874}, &quot;dark&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;}, &quot;state&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;lista&quot;, &quot;vazio&quot;, &quot;buscaVazia&quot;, &quot;buscaBloqueada&quot;, &quot;limite&quot;, &quot;poda&quot;, &quot;confirmar&quot;], &quot;default&quot;: &quot;lista&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const st = this.props.state || 'lista';
+    const c = dark ? {
+      bg: '#121212', paper: '#1E1D1B', ink: '#F2EFE9', ink2: '#9C978D', hair: '#2C2A27',
+      accent: '#E08A4C', bad: '#F2836A', ok: '#6FAE7E',
+      shadow: '0 1px 2px rgba(0,0,0,0.4), 0 8px 22px rgba(0,0,0,0.3)',
+    } : {
+      bg: '#F2EFE9', paper: '#FBF9F5', ink: '#1B1A18', ink2: '#6E6A62', hair: '#E3DED4',
+      accent: '#C86A2E', bad: '#B3261E', ok: '#3E7C4F',
+      shadow: '0 1px 2px rgba(27,26,24,0.05), 0 8px 22px rgba(27,26,24,0.05)',
+    };
+    const todos = [
+      { t: 'comprar pão', d: 'hoje' },
+      { t: 'ligar pra dentista até sexta', d: 'ontem' },
+      { t: 'levar a Sofia no inglês às 14h', d: '12 ago' },
+      { t: 'boleto do condomínio vence dia 10', d: '9 ago' },
+      { t: 'não esquecer o carregador', d: '5 ago' },
+      { t: 'a Dona Maria vem terça de manhã', d: '2 ago' },
+      { t: 'levar o carro pra revisão', d: '28 jul' },
+      { t: 'renovar o seguro da casa', d: '21 jul' },
+    ];
+    const poda = st === 'poda';
+    const conf = st === 'confirmar';
+    const bloq = st === 'buscaBloqueada';
+    const bv = st === 'buscaVazia';
+    return {
+      dark, c,
+      vazio: st === 'vazio',
+      temLista: st !== 'vazio' && !bv,
+      buscaVazia: bv,
+      itens: st === 'limite' || poda || conf ? todos.slice(0, 8) : todos.slice(0, 6),
+      showCounter: st === 'limite' || poda,
+      proBg: dark ? 'rgba(224,138,76,0.18)' : 'rgba(200,106,46,0.12)',
+      searchBg: dark ? 'rgba(255,255,255,0.06)' : 'rgba(27,26,24,0.05)',
+      searchOpacity: bloq ? 0.55 : 1,
+      searchText: bv ? 'carregador azul' : 'Buscar',
+      searchFg: bv ? c.ink : c.ink2,
+      searchPro: bloq,
+      showDialog: poda || conf,
+      dialogBg: dark ? 'rgba(40,38,35,0.92)' : 'rgba(251,249,245,0.94)',
+      dialogTitle: poda ? 'Seu arquivo está cheio' : 'Excluir este bilhete?',
+      dialogBody: poda
+        ? 'Sem o Pro cabem 10 bilhetes no arquivo. Arquivar este apaga "comprar pão" de vez.'
+        : 'Não dá pra desfazer.',
+      dialogActions: poda
+        ? [
+            { t: 'Arquivar mesmo assim', c: c.ink, w: 400 },
+            { t: 'Ver o Pro', c: c.accent, w: 600 },
+            { t: 'Cancelar', c: c.ink2, w: 400 },
+          ]
+        : [
+            { t: 'Excluir', c: c.bad, w: 600 },
+            { t: 'Cancelar', c: c.ink2, w: 400 },
+          ],
+    };
+  }
+}
+</script>
+</body>
+</html>

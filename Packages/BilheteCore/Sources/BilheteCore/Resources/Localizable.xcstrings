@@ -1,0 +1,225 @@
+{
+  "sourceLanguage" : "pt-BR",
+  "strings" : {
+    "Abre o Bilhete direto no editor." : {
+
+    },
+    "Arquiva o bilhete em destaque." : {
+
+    },
+    "Arquivar bilhete" : {
+
+    },
+    "Coloca seu bilhete de volta na tela de bloqueio." : {
+
+    },
+    "Concluir bilhete" : {
+
+    },
+    "core.control.failure.body" : {
+      "comment" : "15.15",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Bilhete and try again."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abra o Bilhete e tente de novo."
+          }
+        }
+      }
+    },
+    "core.control.failure.title" : {
+      "comment" : "15.15 — falha do Controle, que não tem UI para erro (L10, L13)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't pin"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não consegui fixar"
+          }
+        }
+      }
+    },
+    "core.expiry.action.repin" : {
+      "comment" : "15.9a — ação da notificação (critério 8.7.6)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin again"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refixar"
+          }
+        }
+      }
+    },
+    "core.expiry.body.noWidget" : {
+      "comment" : "15.9b — variante sem widget (spec 9.4)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With the Lock Screen widget it stays for good. Tap to see how."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com o widget na tela de bloqueio ele fica pra sempre. Toque pra ver como."
+          }
+        }
+      }
+    },
+    "core.expiry.body.withWidget" : {
+      "comment" : "15.9a — corpo quando o widget já está na tela de bloqueio: mostra o próprio bilhete",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "core.expiry.title" : {
+      "comment" : "15.9a e 15.9b — título do aviso de expiração (regra 11.7)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your note leaves the screen in 30 minutes"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu bilhete sai da tela em 30 minutos"
+          }
+        }
+      }
+    },
+    "core.pro.notice.body" : {
+      "comment" : "15.8",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One purchase, forever."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma compra só, pra sempre."
+          }
+        }
+      }
+    },
+    "core.pro.notice.title" : {
+      "comment" : "15.8 — aviso quando um Controle ou a Siri é acionado sem Pro (critério 8.6.9)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That's in Bilhete Pro"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isso é do Bilhete Pro"
+          }
+        }
+      }
+    },
+    "core.siri.created" : {
+      "comment" : "8.6.6 — confirmação por voz da Siri ao criar bilhete",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got it."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anotei."
+          }
+        }
+      }
+    },
+    "core.siri.pinned" : {
+      "comment" : "8.6 — confirmação por voz ao refixar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your note is on the screen."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu bilhete está na tela."
+          }
+        }
+      }
+    },
+    "Cria um bilhete com o texto que você ditar." : {
+
+    },
+    "Criar bilhete" : {
+
+    },
+    "Novo bilhete" : {
+
+    },
+    "O que você quer anotar?" : {
+
+    },
+    "Refixar bilhete" : {
+
+    },
+    "Soltar bilhete" : {
+
+    },
+    "Texto" : {
+
+    },
+    "Tira o bilhete da tela sem arquivar." : {
+
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ dark }}" hint-size="402px,874px">
+  <div style="height: 100%; display: flex; flex-direction: column; box-sizing: border-box; padding: 52px 20px 0; background: {{ c.bg }}; font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif; overflow: auto;">
+
+    <div style="display: flex; align-items: center; gap: 4px;">
+      <svg width="11" height="18" viewBox="0 0 11 18" style="display: block;">
+        <path d="M9 1L2 9l7 8" fill="none" stroke="{{ c.ink }}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <span style="font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Destaque</span>
+    </div>
+    <div style="padding: 6px 0 18px; font-size: 34px; font-weight: 700; letter-spacing: -0.6px; color: {{ c.ink }};">Ajustes</div>
+
+    <div style="display: flex; flex-direction: column; gap: 22px; padding-bottom: 40px;">
+
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="padding: 0 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; color: {{ c.ink2 }};">Aparência</div>
+        <div style="display: flex; gap: 4px; padding: 4px; border-radius: 14px; background: {{ segBg }};">
+          <div style="flex: 1; padding: 8px 0; text-align: center; border-radius: 11px; background: {{ accentSoft }}; font-size: 15px; font-weight: 600; color: {{ c.accent }};">Sistema</div>
+          <div style="flex: 1; padding: 8px 0; text-align: center; border-radius: 11px; font-size: 15px; color: {{ c.ink2 }};">Claro</div>
+          <div style="flex: 1; padding: 8px 0; text-align: center; border-radius: 11px; font-size: 15px; color: {{ c.ink2 }};">Escuro</div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px; padding: 0 4px;">
+          <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; color: {{ c.ink2 }};">Fonte</span>
+          <sc-if value="{{ semPro }}" hint-placeholder-val="{{ true }}">
+            <span style="padding: 2px 8px; border-radius: 6px; background: {{ accentSoft }}; color: {{ c.accent }}; font-size: 11px; font-weight: 700; letter-spacing: 0.3px;">PRO</span>
+          </sc-if>
+        </div>
+        <div style="display: flex; gap: 4px; padding: 4px; border-radius: 14px; background: {{ segBg }}; opacity: {{ fonteOpacity }};">
+          <div style="flex: 1; padding: 8px 0; text-align: center; border-radius: 11px; background: {{ fontePadraoBg }}; font-size: 15px; font-weight: 600; color: {{ fontePadraoFg }};">padrão</div>
+          <div style="flex: 1; padding: 8px 0; text-align: center; border-radius: 11px; background: {{ fonteMonoBg }}; font-family: ui-monospace, 'SF Mono', monospace; font-size: 14px; color: {{ fonteMonoFg }};">mono</div>
+          <div style="flex: 1; padding: 8px 0; text-align: center; border-radius: 11px; font-family: 'New York', ui-serif, Georgia, serif; font-size: 16px; color: {{ c.ink2 }};">serifada</div>
+        </div>
+      </div>
+
+      <div style="border-radius: 20px; background: {{ c.paper }}; box-shadow: {{ c.shadow }}; overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-bottom: 0.5px solid {{ c.hair }};">
+          <span style="flex: 1; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Texto pequeno</span>
+          <div style="width: 51px; height: 31px; padding: 2px; box-sizing: border-box; border-radius: 999px; background: {{ offBg }}; display: flex; align-items: center;">
+            <div style="width: 27px; height: 27px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 13px 16px;">
+          <span style="flex: 1; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Avisar antes de expirar</span>
+          <div style="width: 51px; height: 31px; padding: 2px; box-sizing: border-box; border-radius: 999px; background: {{ c.ok }}; display: flex; align-items: center; justify-content: flex-end;">
+            <div style="width: 27px; height: 27px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-radius: 20px; background: {{ c.paper }}; box-shadow: {{ c.shadow }}; overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-bottom: 0.5px solid {{ c.hair }};">
+          <span style="flex: 1; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Como colocar na tela de bloqueio</span>
+          <svg width="8" height="14" viewBox="0 0 8 14" style="display: block; flex-shrink: 0;">
+            <path d="M1 1l6 6-6 6" fill="none" stroke="{{ c.ink2 }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 13px 16px;">
+          <span style="flex: 1; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Sincronização</span>
+          <span style="font-size: 15px; color: {{ syncColor }}; text-align: right;">{{ syncText }}</span>
+        </div>
+      </div>
+
+      <div style="border-radius: 20px; background: {{ c.paper }}; box-shadow: {{ c.shadow }}; overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 15px 16px; border-bottom: 0.5px solid {{ c.hair }};">
+          <span style="flex: 1; font-size: 17px; font-weight: 600; color: {{ proRowColor }}; letter-spacing: -0.24px;">{{ proRow }}</span>
+          <sc-if value="{{ semPro }}" hint-placeholder-val="{{ true }}">
+            <svg width="8" height="14" viewBox="0 0 8 14" style="display: block; flex-shrink: 0;">
+              <path d="M1 1l6 6-6 6" fill="none" stroke="{{ c.accent }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </sc-if>
+        </div>
+        <div style="display: flex; align-items: center; padding: 13px 16px;">
+          <span style="font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Restaurar compras</span>
+        </div>
+      </div>
+
+      <div style="border-radius: 20px; background: {{ c.paper }}; box-shadow: {{ c.shadow }}; overflow: hidden;">
+        <div style="display: flex; align-items: center; padding: 13px 16px; border-bottom: 0.5px solid {{ c.hair }};">
+          <span style="flex: 1; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Avaliar</span>
+        </div>
+        <div style="display: flex; align-items: center; padding: 13px 16px; border-bottom: 0.5px solid {{ c.hair }};">
+          <span style="flex: 1; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Enviar feedback</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 13px 16px;">
+          <span style="flex: 1; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Sobre</span>
+          <span style="font-size: 15px; color: {{ c.ink2 }};">1.0 (12)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 402, &quot;height&quot;: 874}, &quot;dark&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;}, &quot;state&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;semPro&quot;, &quot;comPro&quot;, &quot;syncDesligada&quot;, &quot;syncErro&quot;], &quot;default&quot;: &quot;semPro&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const st = this.props.state || 'semPro';
+    const c = dark ? {
+      bg: '#121212', paper: '#1E1D1B', ink: '#F2EFE9', ink2: '#9C978D', hair: '#2C2A27',
+      accent: '#E08A4C', bad: '#F2836A', ok: '#6FAE7E',
+      shadow: '0 1px 2px rgba(0,0,0,0.4), 0 8px 22px rgba(0,0,0,0.3)',
+    } : {
+      bg: '#F2EFE9', paper: '#FBF9F5', ink: '#1B1A18', ink2: '#6E6A62', hair: '#E3DED4',
+      accent: '#C86A2E', bad: '#B3261E', ok: '#3E7C4F',
+      shadow: '0 1px 2px rgba(27,26,24,0.05), 0 8px 22px rgba(27,26,24,0.05)',
+    };
+    const comPro = st === 'comPro';
+    const accentSoft = dark ? 'rgba(224,138,76,0.18)' : 'rgba(200,106,46,0.12)';
+    const sync = {
+      semPro: ['Sincronizando com o iCloud', c.ink2],
+      comPro: ['Sincronizando com o iCloud', c.ink2],
+      syncDesligada: ['Sincronização desligada', c.ink2],
+      syncErro: ['Não consegui sincronizar', c.bad],
+    }[st] || ['Sincronizando com o iCloud', c.ink2];
+    return {
+      dark, c, accentSoft,
+      semPro: !comPro,
+      segBg: dark ? 'rgba(255,255,255,0.06)' : 'rgba(27,26,24,0.05)',
+      offBg: dark ? 'rgba(255,255,255,0.16)' : 'rgba(27,26,24,0.16)',
+      fonteOpacity: comPro ? 1 : 0.55,
+      fontePadraoBg: comPro ? 'transparent' : accentSoft,
+      fontePadraoFg: comPro ? c.ink2 : c.accent,
+      fonteMonoBg: comPro ? accentSoft : 'transparent',
+      fonteMonoFg: comPro ? c.accent : c.ink2,
+      syncText: sync[0],
+      syncColor: sync[1],
+      proRow: comPro ? 'Bilhete Pro ✓' : 'Bilhete Pro',
+      proRowColor: comPro ? c.ok : c.accent,
+    };
+  }
+}
+</script>
+</body>
+</html>

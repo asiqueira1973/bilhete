@@ -1,0 +1,26 @@
+# O projeto do Xcode é gerado pelo XcodeGen a partir do project.yml — versionar
+# os dois faria o .xcodeproj virar fonte de conflito a cada `xcodegen generate`.
+# Quem clona roda `xcodegen generate` (ver README).
+Bilhete.xcodeproj/
+
+# Artefatos de build
+build/
+DerivedData/
+*.xcarchive
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Estado local do Xcode
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/*/.build/
+
+# macOS
+.DS_Store

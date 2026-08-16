@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body { margin: 0; }
+</style>
+</helmet>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ dark }}" keyboard="{{ kb }}" hint-size="402px,874px">
+  <div style="height: 100%; display: flex; flex-direction: column; box-sizing: border-box; padding: 52px 20px 0; background: {{ c.bg }}; font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-bottom: 12px;">
+      <div style="display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px 0 10px; border-radius: 999px; background: {{ c.glass }}; border: 0.5px solid {{ c.hair }}; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+        <svg width="17" height="15" viewBox="0 0 17 15" style="display: block;">
+          <rect x="1" y="1" width="15" height="4" rx="1.6" fill="{{ c.ink2 }}"></rect>
+          <rect x="1" y="6.5" width="15" height="3.2" rx="1.4" fill="{{ c.ink2 }}" opacity="0.6"></rect>
+          <rect x="1" y="11" width="15" height="3" rx="1.3" fill="{{ c.ink2 }}" opacity="0.35"></rect>
+        </svg>
+        <span style="font-size: 15px; font-weight: 600; color: {{ c.ink }}; letter-spacing: -0.2px;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: {{ c.glass }}; border: 0.5px solid {{ c.hair }}; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+          <svg width="18" height="5" viewBox="0 0 18 5" style="display: block;">
+            <circle cx="2.4" cy="2.4" r="2.1" fill="{{ c.ink2 }}"></circle>
+            <circle cx="9" cy="2.4" r="2.1" fill="{{ c.ink2 }}"></circle>
+            <circle cx="15.6" cy="2.4" r="2.1" fill="{{ c.ink2 }}"></circle>
+          </svg>
+        </div>
+        <div style="width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: {{ c.glass }}; border: 0.5px solid {{ c.hair }}; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+          <svg width="19" height="19" viewBox="0 0 20 20" style="display: block;">
+            <circle cx="10" cy="10" r="6.2" fill="none" stroke="{{ c.ink2 }}" stroke-width="1.9"></circle>
+            <circle cx="10" cy="10" r="2.4" fill="none" stroke="{{ c.ink2 }}" stroke-width="1.9"></circle>
+            <path d="M10 1.2v2.2 M10 16.6v2.2 M1.2 10h2.2 M16.6 10h2.2 M3.9 3.9l1.6 1.6 M14.5 14.5l1.6 1.6 M16.1 3.9l-1.6 1.6 M5.5 14.5l-1.6 1.6" stroke="{{ c.ink2 }}" stroke-width="1.9" stroke-linecap="round"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <sc-if value="{{ showSelo }}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; align-items: center; gap: 6px; padding: 0 4px 10px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" style="display: block;">
+          <circle cx="6" cy="6" r="3.4" fill="{{ c.ok }}"></circle>
+        </svg>
+        <span style="font-size: 13px; font-weight: 500; color: {{ c.ok }}; letter-spacing: -0.08px;">na tela até 15:30</span>
+      </div>
+    </sc-if>
+
+    <div style="flex: 1; min-height: 0; display: flex; flex-direction: column; background: {{ c.paper }}; border-radius: 26px; box-shadow: {{ c.shadow }}; padding: 24px 22px 16px; overflow: auto;">
+      <div style="font-size: {{ fsBody }}px; line-height: {{ lhBody }}px; color: {{ bodyColor }}; letter-spacing: -0.3px; text-wrap: pretty; white-space: pre-wrap; font-weight: 400;">{{ body }}<sc-if value="{{ showCaret }}" hint-placeholder-val="{{ false }}"><span style="display: inline-block; width: 2px; height: {{ caretH }}px; margin-left: 1px; border-radius: 1px; background: {{ c.accent }}; vertical-align: text-bottom;"></span></sc-if></div>
+      <sc-if value="{{ showCounter }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: auto; padding-top: 12px; text-align: right; font-size: 13px; font-variant-numeric: tabular-nums; color: {{ counterColor }}; font-weight: 500;">{{ counter }}</div>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ showBanner }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 12px; padding: 14px 16px; border-radius: 18px; background: {{ c.paper }}; border: 0.5px solid {{ c.hair }};">
+        <div style="font-size: 15px; font-weight: 600; color: {{ bannerTitleColor }}; letter-spacing: -0.24px;">{{ bannerTitle }}</div>
+        <div style="margin-top: 3px; font-size: 13px; line-height: 18px; color: {{ c.ink2 }}; letter-spacing: -0.08px; text-wrap: pretty;">{{ bannerBody }}</div>
+        <sc-if value="{{ showBannerAction }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 10px; font-size: 15px; font-weight: 600; color: {{ c.accent }}; letter-spacing: -0.24px;">Abrir Ajustes</div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showDica }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 12px; display: flex; align-items: center; gap: 12px; padding: 14px 14px 14px 16px; border-radius: 18px; background: {{ c.paper }}; border: 0.5px solid {{ c.hair }};">
+        <div style="flex: 1; font-size: 15px; font-weight: 500; color: {{ c.ink }}; letter-spacing: -0.24px;">Como colocar na tela de bloqueio</div>
+        <svg width="8" height="14" viewBox="0 0 8 14" style="display: block;">
+          <path d="M1 1l6 6-6 6" fill="none" stroke="{{ c.ink2 }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <div style="width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: {{ c.glass }};">
+          <svg width="11" height="11" viewBox="0 0 11 11" style="display: block;">
+            <path d="M1 1l9 9M10 1l-9 9" stroke="{{ c.ink2 }}" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="display: flex; flex-direction: {{ barDir }}; align-items: stretch; gap: 4px; margin: 12px 0 {{ barBottom }}px; padding: 6px; border-radius: {{ barRadius }}px; background: {{ c.glass }}; border: 0.5px solid {{ c.hair }}; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);">
+      <div style="flex: 1; display: flex; flex-direction: {{ btnDir }}; align-items: center; justify-content: center; gap: {{ btnGap }}px; padding: 10px 6px; border-radius: 16px;">
+        <svg width="21" height="21" viewBox="0 0 22 22" style="display: block; flex-shrink: 0;">
+          <path d="M11 3v10m0 0l-4-4m4 4l4-4" fill="none" stroke="{{ c.ink }}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M3.5 14.5v2.2a2.3 2.3 0 002.3 2.3h10.4a2.3 2.3 0 002.3-2.3v-2.2" fill="none" stroke="{{ c.ink }}" stroke-width="1.9" stroke-linecap="round"></path>
+        </svg>
+        <span style="font-size: {{ fsLabel }}px; font-weight: 500; color: {{ c.ink }}; letter-spacing: -0.1px;">Guardar</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: {{ btnDir }}; align-items: center; justify-content: center; gap: {{ btnGap }}px; padding: 10px 6px; border-radius: 16px; background: {{ pinBg }};">
+        <svg width="21" height="21" viewBox="0 0 22 22" style="display: block; flex-shrink: 0;">
+          <path d="M11 13.4v5.8" fill="none" stroke="{{ pinColor }}" stroke-width="1.9" stroke-linecap="round"></path>
+          <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="{{ pinFill }}" stroke="{{ pinColor }}" stroke-width="1.7" stroke-linejoin="round"></path>
+        </svg>
+        <span style="font-size: {{ fsLabel }}px; font-weight: 500; color: {{ pinColor }}; letter-spacing: -0.1px;">{{ pinLabel }}</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: {{ btnDir }}; align-items: center; justify-content: center; gap: {{ btnGap }}px; padding: 10px 6px; border-radius: 16px;">
+        <svg width="21" height="21" viewBox="0 0 22 22" style="display: block; flex-shrink: 0;">
+          <rect x="2.8" y="3.6" width="16.4" height="4" rx="1.6" fill="none" stroke="{{ c.ink }}" stroke-width="1.9"></rect>
+          <path d="M4.4 8.6v8.1a1.7 1.7 0 001.7 1.7h9.8a1.7 1.7 0 001.7-1.7V8.6" fill="none" stroke="{{ c.ink }}" stroke-width="1.9" stroke-linecap="round"></path>
+          <path d="M8.6 12.2h4.8" fill="none" stroke="{{ c.ink }}" stroke-width="1.9" stroke-linecap="round"></path>
+        </svg>
+        <span style="font-size: {{ fsLabel }}px; font-weight: 500; color: {{ c.ink }}; letter-spacing: -0.1px;">Arquivar</span>
+      </div>
+    </div>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 402, &quot;height&quot;: 874}, &quot;dark&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;}, &quot;state&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;vazio&quot;, &quot;escrevendo&quot;, &quot;limite&quot;, &quot;fixado&quot;, &quot;expirado&quot;, &quot;erro&quot;, &quot;indisponivel&quot;, &quot;dica&quot;], &quot;default&quot;: &quot;escrevendo&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;scale&quot;: {&quot;editor&quot;: &quot;float&quot;, &quot;default&quot;: 1, &quot;min&quot;: 1, &quot;max&quot;: 2, &quot;step&quot;: 0.1, &quot;tsType&quot;: &quot;number&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const st = this.props.state || 'escrevendo';
+    const sc = this.props.scale || 1;
+    const big = sc > 1.4;
+
+    const c = dark ? {
+      bg: '#121212', paper: '#1E1D1B', ink: '#F2EFE9', ink2: '#9C978D',
+      hair: '#2C2A27', accent: '#E08A4C', bad: '#F2836A', ok: '#6FAE7E',
+      glass: 'rgba(255,255,255,0.06)',
+      shadow: '0 1px 2px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.35)',
+    } : {
+      bg: '#F2EFE9', paper: '#FBF9F5', ink: '#1B1A18', ink2: '#6E6A62',
+      hair: '#E3DED4', accent: '#C86A2E', bad: '#B3261E', ok: '#3E7C4F',
+      glass: 'rgba(255,255,255,0.55)',
+      shadow: '0 1px 2px rgba(27,26,24,0.05), 0 10px 28px rgba(27,26,24,0.06)',
+    };
+
+    const longo = 'levar a Sofia no inglês às 14h e depois passar na farmácia pegar o remédio da Dona Maria, que vem terça de manhã. o boleto do condomínio vence dia 10, então pagar antes de sexta. ligar pra dentista pra remarcar. comprar pão na volta e não esquecer o carregador azul';
+    const map = {
+      vazio: { body: 'Escreva o que você não quer esquecer', placeholder: true, kb: true },
+      escrevendo: { body: 'levar a Sofia no inglês às 14h', kb: true },
+      limite: { body: longo, kb: true, counter: true },
+      fixado: { body: 'a Dona Maria vem terça de manhã', selo: true, pin: 'Soltar' },
+      expirado: { body: 'a Dona Maria vem terça de manhã', pin: 'Refixar' },
+      erro: {
+        body: 'boleto do condomínio vence dia 10',
+        banner: ['Não consegui salvar agora', 'Seu texto continua aqui. Vou tentar de novo em instantes.'],
+        bannerBad: true,
+      },
+      indisponivel: {
+        body: 'não esquecer o carregador',
+        banner: ['Não dá pra fixar agora', 'As Atividades ao Vivo estão desligadas para o Bilhete nos Ajustes do iPhone.'],
+        action: true,
+      },
+      dica: { body: 'comprar pão', dica: true },
+    };
+    const s = map[st] || map.escrevendo;
+    const fixado = st === 'fixado';
+
+    return {
+      dark, c,
+      kb: !!s.kb,
+      body: s.body,
+      bodyColor: s.placeholder ? c.ink2 : c.ink,
+      showCaret: !!s.kb,
+      fsBody: Math.round(22 * sc),
+      lhBody: Math.round(32 * sc),
+      caretH: Math.round(26 * sc),
+      showCounter: !!s.counter,
+      counter: s.body.length + '/280',
+      counterColor: s.body.length >= 280 ? c.bad : c.ink2,
+      showSelo: !!s.selo,
+      showBanner: !!s.banner,
+      bannerTitle: s.banner ? s.banner[0] : '',
+      bannerBody: s.banner ? s.banner[1] : '',
+      bannerTitleColor: s.bannerBad ? c.bad : c.ink,
+      showBannerAction: !!s.action,
+      showDica: !!s.dica,
+      pinLabel: s.pin || 'Fixar',
+      pinColor: fixado ? c.accent : c.ink,
+      pinFill: fixado ? c.accent : 'none',
+      pinBg: fixado ? (dark ? 'rgba(224,138,76,0.14)' : 'rgba(200,106,46,0.10)') : 'transparent',
+      barDir: big ? 'column' : 'row',
+      btnDir: big ? 'row' : 'column',
+      btnGap: big ? 12 : 5,
+      barRadius: big ? 24 : 26,
+      barBottom: s.kb ? 6 : 32,
+      fsLabel: big ? Math.round(17 * (sc / 1.9)) + 10 : 11,
+    };
+  }
+}
+</script>
+</body>
+</html>

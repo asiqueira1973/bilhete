@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="display: inline-flex; align-items: center; justify-content: center; padding: 26px; border-radius: 30px; background: {{ wall }}; font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;">
+
+  <sc-if value="{{ s3 }}" hint-placeholder-val="{{ true }}">
+    <div style="width: 158px; height: 158px; box-sizing: border-box; padding: 14px; border-radius: 26px; background: {{ c.paper }}; box-shadow: 0 6px 18px rgba(0,0,0,0.18); display: flex; flex-direction: column;">
+      <div style="flex: 1; font-size: 15px; line-height: 20px; color: {{ c.ink }}; letter-spacing: -0.2px; text-wrap: pretty; overflow: hidden;">ligar pra dentista até sexta</div>
+      <div style="height: 32px; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 12px; background: {{ c.soft }};">
+        <svg width="14" height="14" viewBox="0 0 22 22" style="display: block;">
+          <path d="M4.6 11.4l4.2 4.2 8.6-9.4" fill="none" stroke="{{ c.ink }}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span style="font-size: 14px; font-weight: 600; color: {{ c.ink }}; letter-spacing: -0.1px;">Concluir</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ s4 }}" hint-placeholder-val="{{ false }}">
+    <div style="width: 338px; height: 158px; box-sizing: border-box; padding: 16px; border-radius: 26px; background: {{ c.paper }}; box-shadow: 0 6px 18px rgba(0,0,0,0.18); display: flex; gap: 14px;">
+      <div style="flex: 1; min-width: 0; font-size: 17px; line-height: 23px; color: {{ c.ink }}; letter-spacing: -0.24px; text-wrap: pretty; overflow: hidden;">boleto do condomínio vence dia 10</div>
+      <div style="width: 108px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px;">
+        <div style="height: 36px; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 12px; background: {{ c.soft }};">
+          <svg width="15" height="15" viewBox="0 0 22 22" style="display: block;">
+            <path d="M4.6 11.4l4.2 4.2 8.6-9.4" fill="none" stroke="{{ c.ink }}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span style="font-size: 14px; font-weight: 600; color: {{ c.ink }}; letter-spacing: -0.1px;">Concluir</span>
+        </div>
+        <div style="height: 36px; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 12px; background: {{ c.accentSoft }};">
+          <svg width="15" height="15" viewBox="0 0 22 22" style="display: block;">
+            <path d="M11 13.4v5.8" fill="none" stroke="{{ c.accent }}" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="{{ c.accent }}"></path>
+          </svg>
+          <span style="font-size: 14px; font-weight: 600; color: {{ c.accent }}; letter-spacing: -0.1px;">Fixar</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ cc }}" hint-placeholder-val="{{ false }}">
+    <div style="width: 330px; box-sizing: border-box; padding: 18px; border-radius: 34px; background: rgba(60,60,66,0.55); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 0.5px solid rgba(255,255,255,0.14); display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+      <div style="aspect-ratio: 1; border-radius: 999px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center;">
+        <svg width="22" height="22" viewBox="0 0 22 22" style="display: block;">
+          <path d="M11 13.4v5.8" fill="none" stroke="{{ c.accent }}" stroke-width="2.1" stroke-linecap="round"></path>
+          <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="{{ c.accent }}"></path>
+        </svg>
+      </div>
+      <div style="aspect-ratio: 1; border-radius: 999px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center;">
+        <svg width="22" height="22" viewBox="0 0 22 22" style="display: block;">
+          <path d="M3.4 15.2l10.2-10.2 3.4 3.4L6.8 18.6H3.4v-3.4z" fill="{{ c.accent }}"></path>
+          <path d="M13.6 5l3.4 3.4" stroke="#000000" stroke-opacity="0.25" stroke-width="1.2"></path>
+        </svg>
+      </div>
+      <div style="aspect-ratio: 1; border-radius: 999px; background: rgba(255,255,255,0.09);"></div>
+      <div style="aspect-ratio: 1; border-radius: 999px; background: rgba(255,255,255,0.09);"></div>
+      <div style="aspect-ratio: 1; border-radius: 999px; background: rgba(255,255,255,0.09);"></div>
+      <div style="aspect-ratio: 1; border-radius: 999px; background: rgba(255,255,255,0.09);"></div>
+      <div style="aspect-ratio: 1; border-radius: 999px; background: rgba(255,255,255,0.09);"></div>
+      <div style="aspect-ratio: 1; border-radius: 999px; background: rgba(255,255,255,0.09);"></div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ acao }}" hint-placeholder-val="{{ false }}">
+    <div style="width: 330px; display: flex; justify-content: center;">
+      <div style="display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 18px; border-radius: 999px; background: #000000;">
+        <svg width="18" height="18" viewBox="0 0 22 22" style="display: block;">
+          <path d="M11 13.4v5.8" fill="none" stroke="{{ c.accent }}" stroke-width="2.1" stroke-linecap="round"></path>
+          <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="{{ c.accent }}"></path>
+        </svg>
+        <span style="font-size: 15px; font-weight: 600; color: #FFFFFF; letter-spacing: -0.1px;">Refixar bilhete</span>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 400, &quot;height&quot;: 240}, &quot;dark&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;}, &quot;piece&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;s3&quot;, &quot;s4&quot;, &quot;cc&quot;, &quot;acao&quot;], &quot;default&quot;: &quot;s3&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const piece = this.props.piece || 's3';
+    const c = dark ? {
+      paper: '#1E1D1B', ink: '#F2EFE9', ink2: '#9C978D', accent: '#E08A4C',
+      soft: 'rgba(255,255,255,0.09)', accentSoft: 'rgba(224,138,76,0.18)',
+    } : {
+      paper: '#FBF9F5', ink: '#1B1A18', ink2: '#6E6A62', accent: '#C86A2E',
+      soft: 'rgba(27,26,24,0.06)', accentSoft: 'rgba(200,106,46,0.12)',
+    };
+    return {
+      c,
+      wall: dark
+        ? 'radial-gradient(120% 90% at 30% 10%, #33404F 0%, #14181E 70%)'
+        : 'radial-gradient(120% 90% at 30% 10%, #EFE3CE 0%, #B7A791 75%)',
+      s3: piece === 's3',
+      s4: piece === 's4',
+      cc: piece === 'cc',
+      acao: piece === 'acao',
+    };
+  }
+}
+</script>
+</body>
+</html>

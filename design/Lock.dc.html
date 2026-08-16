@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="width: 402px; height: 874px; position: relative; border-radius: 48px; overflow: hidden; background: {{ wallBg }}; box-shadow: 0 40px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.12); font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;">
+
+  <div style="position: absolute; inset: 0; background: {{ wallBlobs }};"></div>
+  <div style="position: absolute; inset: 0; background: {{ wallShade }};"></div>
+
+  <sc-if value="{{ ilhaBase }}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: {{ ilhaW }}px; height: 37px; border-radius: 24px; background: #000000; z-index: 40; display: flex; align-items: center; justify-content: {{ ilhaJustify }}; gap: 8px; padding: 0 {{ ilhaPad }}px; box-sizing: border-box;">
+      <sc-if value="{{ ilhaConteudo }}" hint-placeholder-val="{{ false }}">
+        <svg width="15" height="15" viewBox="0 0 22 22" style="display: block; flex-shrink: 0;">
+          <path d="M11 13.4v5.8" fill="none" stroke="{{ accent }}" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="{{ accent }}"></path>
+        </svg>
+        <sc-if value="{{ ilhaTexto }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size: 13px; font-weight: 500; color: #FFFFFF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">comprar pão</span>
+        </sc-if>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ ilhaExpandida }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 372px; height: 160px; border-radius: 44px; background: #000000; z-index: 40; box-sizing: border-box; padding: 22px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="display: flex; align-items: flex-start; gap: 12px;">
+        <svg width="19" height="19" viewBox="0 0 22 22" style="display: block; flex-shrink: 0; margin-top: 2px;">
+          <path d="M11 13.4v5.8" fill="none" stroke="{{ accent }}" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="{{ accent }}"></path>
+        </svg>
+        <div style="flex: 1; font-size: 20px; font-weight: 500; line-height: 27px; color: #FFFFFF; letter-spacing: -0.2px; text-wrap: pretty;">a Dona Maria vem terça de manhã</div>
+      </div>
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <div style="width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,0.16); display: flex; align-items: center; justify-content: center;">
+          <svg width="21" height="21" viewBox="0 0 22 22" style="display: block;">
+            <path d="M4.6 11.4l4.2 4.2 8.6-9.4" fill="none" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div style="width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,0.16); display: flex; align-items: center; justify-content: center;">
+          <svg width="21" height="21" viewBox="0 0 22 22" style="display: block;">
+            <path d="M11 13.4v5.8" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round"></path>
+            <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path>
+            <path d="M3.6 3.6l14.8 14.8" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position: absolute; top: 18px; right: 28px; display: flex; align-items: center; gap: 7px; z-index: 30;">
+    <svg width="19" height="12" viewBox="0 0 19 12" style="display: block;">
+      <rect x="0" y="7.5" width="3.2" height="4.5" rx="0.7" fill="#FFFFFF"></rect>
+      <rect x="4.8" y="5" width="3.2" height="7" rx="0.7" fill="#FFFFFF"></rect>
+      <rect x="9.6" y="2.5" width="3.2" height="9.5" rx="0.7" fill="#FFFFFF"></rect>
+      <rect x="14.4" y="0" width="3.2" height="12" rx="0.7" fill="#FFFFFF"></rect>
+    </svg>
+    <svg width="27" height="13" viewBox="0 0 27 13" style="display: block;">
+      <rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke="#FFFFFF" stroke-opacity="0.4" fill="none"></rect>
+      <rect x="2" y="2" width="16" height="9" rx="2" fill="#FFFFFF"></rect>
+    </svg>
+  </div>
+
+  <div style="position: absolute; top: 78px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 20px; box-sizing: border-box;">
+    <sc-if value="{{ s2 }}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; align-items: center; gap: 6px; padding-bottom: 2px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" style="display: block;">
+          <rect x="1" y="1" width="10" height="10" rx="2.4" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"></rect>
+          <path d="M3.4 4.4h5.2M3.4 7h3.4" stroke="rgba(255,255,255,0.85)" stroke-width="1.3" stroke-linecap="round"></path>
+        </svg>
+        <span style="font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.9); letter-spacing: -0.1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 300px;">não esquecer o carregador</span>
+      </div>
+    </sc-if>
+    <div style="font-size: 17px; font-weight: 500; color: rgba(255,255,255,0.85); letter-spacing: -0.2px;">quinta-feira, 15 de agosto</div>
+    <div style="font-size: 88px; font-weight: 600; line-height: 96px; color: #FFFFFF; letter-spacing: -2px; font-variant-numeric: tabular-nums;">9:41</div>
+  </div>
+
+  <sc-if value="{{ s1 }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; top: 306px; left: 50%; transform: translateX(-50%); width: 172px; height: 76px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 3px; filter: grayscale(1);">
+      <sc-if value="{{ s1Vazio }}" hint-placeholder-val="{{ false }}">
+        <span style="font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.55);">Sem bilhete</span>
+      </sc-if>
+      <sc-if value="{{ s1Cheio }}" hint-placeholder-val="{{ true }}">
+        <span style="font-size: 15px; font-weight: 600; line-height: 20px; color: rgba(255,255,255,1); letter-spacing: -0.1px;">ligar pra dentista até</span>
+        <span style="font-size: 15px; font-weight: 500; line-height: 20px; color: rgba(255,255,255,0.72); letter-spacing: -0.1px;">sexta e pagar o boleto</span>
+        <span style="font-size: 15px; font-weight: 500; line-height: 20px; color: rgba(255,255,255,0.5); letter-spacing: -0.1px;">do condomínio…</span>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ s5 }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; left: 15px; right: 15px; bottom: 132px; min-height: 120px; box-sizing: border-box; border-radius: 26px; background: {{ liveBg }}; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 0.5px solid rgba(255,255,255,0.35); padding: 18px 18px 16px; display: flex; align-items: flex-start; gap: 14px;">
+      <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <svg width="13" height="13" viewBox="0 0 12 12" style="display: block;">
+            <rect x="1" y="1" width="10" height="10" rx="2.4" fill="none" stroke="{{ liveInk2 }}" stroke-width="1.4"></rect>
+            <path d="M3.4 4.4h5.2M3.4 7h3.4" stroke="{{ liveInk2 }}" stroke-width="1.3" stroke-linecap="round"></path>
+          </svg>
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; color: {{ liveInk2 }};">Bilhete</span>
+        </div>
+        <div style="font-size: 20px; font-weight: 500; line-height: 27px; color: {{ liveInk }}; letter-spacing: -0.2px; text-wrap: pretty;">{{ liveTexto }}</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; flex-shrink: 0;">
+        <div style="width: 44px; height: 44px; border-radius: 999px; background: {{ liveBtnBg }}; display: flex; align-items: center; justify-content: center;">
+          <svg width="21" height="21" viewBox="0 0 22 22" style="display: block;">
+            <path d="M4.6 11.4l4.2 4.2 8.6-9.4" fill="none" stroke="{{ liveInk }}" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div style="width: 44px; height: 44px; border-radius: 999px; background: {{ liveBtnBg }}; display: flex; align-items: center; justify-content: center;">
+          <svg width="21" height="21" viewBox="0 0 22 22" style="display: block;">
+            <path d="M11 13.4v5.8" fill="none" stroke="{{ liveInk }}" stroke-width="1.9" stroke-linecap="round"></path>
+            <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="none" stroke="{{ liveInk }}" stroke-width="1.7" stroke-linejoin="round"></path>
+            <path d="M3.6 3.6l14.8 14.8" stroke="{{ liveInk }}" stroke-width="1.9" stroke-linecap="round"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ s11 }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; left: 15px; right: 15px; bottom: 132px; box-sizing: border-box; border-radius: 24px; background: {{ notifBg }}; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 0.5px solid rgba(255,255,255,0.3); padding: 14px 16px; display: flex; gap: 12px;">
+      <div style="width: 38px; height: 38px; flex-shrink: 0; border-radius: 9px; background: #FBF9F5; display: flex; flex-direction: column; justify-content: center; gap: 3px; padding: 0 7px; box-sizing: border-box;">
+        <div style="height: 3px; width: 90%; border-radius: 2px; background: #C9C3B7;"></div>
+        <div style="height: 3px; width: 70%; border-radius: 2px; background: #C9C3B7;"></div>
+        <div style="height: 3px; width: 46%; border-radius: 2px; background: #C9C3B7;"></div>
+      </div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <div style="flex: 1; font-size: 15px; font-weight: 600; color: {{ notifInk }}; letter-spacing: -0.2px; text-wrap: pretty;">Seu bilhete sai da tela em 30 minutos</div>
+          <span style="font-size: 13px; color: {{ notifInk2 }}; flex-shrink: 0;">agora</span>
+        </div>
+        <div style="padding-top: 2px; font-size: 15px; line-height: 20px; color: {{ notifInk2 }}; text-wrap: pretty;">{{ notifBody }}</div>
+        <sc-if value="{{ notifAcao }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 999px; background: {{ notifBtnBg }};">
+            <svg width="14" height="14" viewBox="0 0 22 22" style="display: block;">
+              <path d="M11 13.4v5.8" fill="none" stroke="{{ notifInk }}" stroke-width="2" stroke-linecap="round"></path>
+              <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="{{ notifInk }}"></path>
+            </svg>
+            <span style="font-size: 14px; font-weight: 600; color: {{ notifInk }};">Refixar</span>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 46px; box-sizing: border-box;">
+    <div style="width: 50px; height: 50px; border-radius: 999px; background: {{ ctrlBg }}; border: {{ ctrlBorder }}; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); display: flex; align-items: center; justify-content: center;">
+      <sc-if value="{{ s9 }}" hint-placeholder-val="{{ false }}">
+        <svg width="22" height="22" viewBox="0 0 22 22" style="display: block;">
+          <path d="M11 13.4v5.8" fill="none" stroke="{{ accent }}" stroke-width="2.1" stroke-linecap="round"></path>
+          <path d="M7.2 3.4h7.6l-1.1 5.1 2.1 2.4a1 1 0 01-.75 1.65H6.95a1 1 0 01-.75-1.65l2.1-2.4-1.1-5.1z" fill="{{ accent }}"></path>
+        </svg>
+      </sc-if>
+      <sc-if value="{{ lanterna }}" hint-placeholder-val="{{ true }}">
+        <svg width="20" height="20" viewBox="0 0 20 20" style="display: block;">
+          <path d="M6 2.6h8v2.6l-1.6 2v10.2H7.6V7.2L6 5.2V2.6z" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path>
+        </svg>
+      </sc-if>
+    </div>
+    <div style="width: 50px; height: 50px; border-radius: 999px; background: rgba(255,255,255,0.16); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); display: flex; align-items: center; justify-content: center;">
+      <svg width="22" height="22" viewBox="0 0 22 22" style="display: block;">
+        <path d="M3.2 7.4h3l1.4-2h5.8l1.4 2h3a1.6 1.6 0 011.6 1.6v7a1.6 1.6 0 01-1.6 1.6H3.2A1.6 1.6 0 011.6 16V9a1.6 1.6 0 011.6-1.6z" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path>
+        <circle cx="11" cy="12.4" r="3.2" fill="none" stroke="#FFFFFF" stroke-width="1.7"></circle>
+      </svg>
+    </div>
+  </div>
+
+  <div style="position: absolute; bottom: 8px; left: 0; right: 0; display: flex; justify-content: center;">
+    <div style="width: 139px; height: 5px; border-radius: 999px; background: rgba(255,255,255,0.7);"></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 402, &quot;height&quot;: 874}, &quot;surface&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;s1&quot;, &quot;s1vazio&quot;, &quot;s2&quot;, &quot;s5curto&quot;, &quot;s5longo&quot;, &quot;di-compacta&quot;, &quot;di-minima&quot;, &quot;di-expandida&quot;, &quot;s9&quot;, &quot;s11a&quot;, &quot;s11b&quot;], &quot;default&quot;: &quot;s1&quot;, &quot;tsType&quot;: &quot;string&quot;}, &quot;wall&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;claro&quot;, &quot;escuro&quot;], &quot;default&quot;: &quot;escuro&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.props.surface || 's1';
+    const claro = (this.props.wall || 'escuro') === 'claro';
+    const accent = '#E08A4C';
+    const di = s.indexOf('di') === 0;
+    return {
+      accent,
+      wallBg: claro ? '#C9BCA8' : '#181C22',
+      wallBlobs: claro
+        ? 'radial-gradient(120% 70% at 20% 8%, #EFE3CE 0%, rgba(239,227,206,0) 60%), radial-gradient(90% 60% at 85% 30%, #D8C7AC 0%, rgba(216,199,172,0) 65%), radial-gradient(140% 80% at 40% 100%, #A08E77 0%, rgba(160,142,119,0) 70%)'
+        : 'radial-gradient(120% 70% at 25% 10%, #33404F 0%, rgba(51,64,79,0) 62%), radial-gradient(90% 60% at 88% 35%, #2A3742 0%, rgba(42,55,66,0) 65%), radial-gradient(140% 90% at 45% 105%, #0C0F13 0%, rgba(12,15,19,0) 70%)',
+      wallShade: claro
+        ? 'linear-gradient(180deg, rgba(20,16,12,0.28) 0%, rgba(20,16,12,0.05) 34%, rgba(20,16,12,0.35) 100%)'
+        : 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.05) 36%, rgba(0,0,0,0.45) 100%)',
+      ilhaBase: !di || s === 'di-compacta' || s === 'di-minima',
+      ilhaExpandida: s === 'di-expandida',
+      ilhaW: s === 'di-minima' ? 45 : s === 'di-compacta' ? 118 : 126,
+      ilhaPad: s === 'di-minima' ? 0 : 14,
+      ilhaJustify: s === 'di-minima' ? 'center' : 'space-between',
+      ilhaConteudo: s === 'di-minima' || s === 'di-compacta',
+      ilhaTexto: s === 'di-compacta',
+      s1: s === 's1' || s === 's1vazio',
+      s1Vazio: s === 's1vazio',
+      s1Cheio: s === 's1',
+      s2: s === 's2',
+      s5: s === 's5curto' || s === 's5longo',
+      liveTexto: s === 's5longo'
+        ? 'levar a Sofia no inglês às 14h e depois passar na farmácia pegar o remédio da Dona Maria, que vem terça de manhã. o boleto do condomínio vence dia 10, então pagar antes de…'
+        : 'a Dona Maria vem terça de manhã',
+      liveBg: 'rgba(251,249,245,0.82)',
+      liveInk: '#1B1A18',
+      liveInk2: '#6E6A62',
+      liveBtnBg: 'rgba(27,26,24,0.08)',
+      s11: s === 's11a' || s === 's11b',
+      notifAcao: s === 's11a',
+      notifBody: s === 's11a'
+        ? 'a Dona Maria vem terça de manhã'
+        : 'Com o widget na tela de bloqueio ele fica pra sempre. Toque pra ver como.',
+      notifBg: 'rgba(251,249,245,0.78)',
+      notifInk: '#1B1A18',
+      notifInk2: '#6E6A62',
+      notifBtnBg: 'rgba(27,26,24,0.08)',
+      s9: s === 's9',
+      lanterna: s !== 's9',
+      ctrlBg: s === 's9' ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.16)',
+      ctrlBorder: s === 's9' ? '1px solid rgba(224,138,76,0.5)' : '0.5px solid rgba(255,255,255,0.12)',
+    };
+  }
+}
+</script>
+</body>
+</html>

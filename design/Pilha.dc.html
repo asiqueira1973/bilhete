@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ dark }}" hint-size="402px,874px">
+  <div style="height: 100%; display: flex; flex-direction: column; box-sizing: border-box; padding: 52px 20px 0; background: {{ c.bg }}; font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 6px;">
+      <div style="display: flex; align-items: center; gap: 4px;">
+        <svg width="11" height="18" viewBox="0 0 11 18" style="display: block;">
+          <path d="M9 1L2 9l7 8" fill="none" stroke="{{ c.ink }}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span style="font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px;">Destaque</span>
+      </div>
+      <sc-if value="{{ showCounter }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="padding: 3px 10px; border-radius: 999px; background: {{ counterBg }}; font-size: 13px; font-weight: 600; color: {{ counterFg }}; font-variant-numeric: tabular-nums;">{{ counter }}</span>
+          <span style="padding: 3px 9px; border-radius: 7px; background: {{ proBg }}; color: {{ c.accent }}; font-size: 11px; font-weight: 700; letter-spacing: 0.3px;">PRO</span>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="padding: 6px 0 18px; font-size: 34px; font-weight: 700; letter-spacing: -0.6px; color: {{ c.ink }};">Pilha</div>
+
+    <sc-if value="{{ vazia }}" hint-placeholder-val="{{ false }}">
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding-bottom: 120px;">
+        <div style="font-size: 22px; color: {{ c.ink }}; letter-spacing: -0.3px;">Nada guardado.</div>
+        <div style="max-width: 260px; text-align: center; font-size: 15px; line-height: 21px; color: {{ c.ink2 }}; text-wrap: pretty;">O que estiver em destaque aparece na sua tela.</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ temLista }}" hint-placeholder-val="{{ true }}">
+      <div style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; overflow: auto; padding-bottom: 40px;">
+        <sc-for list="{{ itens }}" as="item" hint-placeholder-count="4">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 16px 16px 16px 14px; border-radius: 20px; background: {{ c.paper }}; box-shadow: {{ c.shadow }};">
+            <svg width="16" height="12" viewBox="0 0 16 12" style="display: block; flex-shrink: 0;">
+              <path d="M1 1.6h14M1 6h14M1 10.4h14" stroke="{{ c.grip }}" stroke-width="1.8" stroke-linecap="round"></path>
+            </svg>
+            <div style="flex: 1; min-width: 0; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ item.t }}</div>
+            <div style="flex-shrink: 0; font-size: 13px; color: {{ c.ink2 }};">{{ item.d }}</div>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ showSwipe }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; align-items: stretch; gap: 6px; height: 56px;">
+            <div style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 0 16px 0 14px; border-radius: 20px; background: {{ c.paper }}; box-shadow: {{ c.shadow }};">
+              <div style="flex: 1; min-width: 0; font-size: 17px; color: {{ c.ink }}; letter-spacing: -0.24px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">comprar pão</div>
+            </div>
+            <div style="width: 74px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border-radius: 20px; background: {{ c.ok }};">
+              <svg width="20" height="20" viewBox="0 0 22 22" style="display: block;">
+                <rect x="2.8" y="3.6" width="16.4" height="4" rx="1.6" fill="none" stroke="#FFFFFF" stroke-width="1.9"></rect>
+                <path d="M4.4 8.6v8.1a1.7 1.7 0 001.7 1.7h9.8a1.7 1.7 0 001.7-1.7V8.6" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round"></path>
+                <path d="M8.6 12.2h4.8" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round"></path>
+              </svg>
+              <span style="font-size: 11px; font-weight: 600; color: #FFFFFF;">Arquivar</span>
+            </div>
+            <div style="width: 74px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border-radius: 20px; background: {{ c.bad }};">
+              <svg width="20" height="20" viewBox="0 0 22 22" style="display: block;">
+                <path d="M4.4 6.6h13.2M8.4 6.6V4.4h5.2v2.2M6.2 6.6l.9 11.2a1.6 1.6 0 001.6 1.5h4.6a1.6 1.6 0 001.6-1.5l.9-11.2" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span style="font-size: 11px; font-weight: 600; color: #FFFFFF;">Excluir</span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 402, &quot;height&quot;: 874}, &quot;dark&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;}, &quot;state&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;lista&quot;, &quot;vazia&quot;, &quot;limite&quot;], &quot;default&quot;: &quot;lista&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const st = this.props.state || 'lista';
+    const c = dark ? {
+      bg: '#121212', paper: '#1E1D1B', ink: '#F2EFE9', ink2: '#9C978D', hair: '#2C2A27',
+      accent: '#E08A4C', bad: '#F2836A', ok: '#6FAE7E', grip: '#4A4741',
+      shadow: '0 1px 2px rgba(0,0,0,0.4), 0 8px 22px rgba(0,0,0,0.3)',
+    } : {
+      bg: '#F2EFE9', paper: '#FBF9F5', ink: '#1B1A18', ink2: '#6E6A62', hair: '#E3DED4',
+      accent: '#C86A2E', bad: '#B3261E', ok: '#3E7C4F', grip: '#C9C3B7',
+      shadow: '0 1px 2px rgba(27,26,24,0.05), 0 8px 22px rgba(27,26,24,0.05)',
+    };
+    const todos = [
+      { t: 'ligar pra dentista até sexta', d: 'hoje' },
+      { t: 'boleto do condomínio vence dia 10', d: 'ontem' },
+      { t: 'a Dona Maria vem terça de manhã', d: '3 dias' },
+      { t: 'não esquecer o carregador', d: 'semana passada' },
+    ];
+    const limite = st === 'limite';
+    return {
+      dark, c,
+      vazia: st === 'vazia',
+      temLista: st !== 'vazia',
+      itens: limite ? todos.slice(0, 3) : todos,
+      showSwipe: st === 'lista',
+      showCounter: limite,
+      counter: '3 de 3',
+      counterBg: dark ? 'rgba(224,138,76,0.18)' : 'rgba(200,106,46,0.12)',
+      counterFg: c.accent,
+      proBg: dark ? 'rgba(224,138,76,0.18)' : 'rgba(200,106,46,0.12)',
+    };
+  }
+}
+</script>
+</body>
+</html>

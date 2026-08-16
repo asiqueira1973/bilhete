@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- App Group: o store do SwiftData e as preferências vivem aqui, para o
+	     app e a widget extension abrirem o mesmo arquivo (spec 4.5).
+	     Não há entitlement de iCloud/CloudKit — decisão D-1. -->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.com.dablab.bilhete</string>
+	</array>
+</dict>
+</plist>

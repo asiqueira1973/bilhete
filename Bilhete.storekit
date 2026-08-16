@@ -1,0 +1,39 @@
+{
+  "identifier": "96579EC6-5D3F-4236-85C8-0C9371C35235",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "19.90",
+      "familyShareable": false,
+      "internalID": "DFC40E52-15D9-4A85-B5CB-6118F771A029",
+      "localizations": [
+        {
+          "description": "Bilhetes sem limite, concluídos sem limite com busca, Ei Siri e Atalhos, criar bilhete pela Central de Controle, e escolher a fonte.",
+          "displayName": "Bilhete Pro",
+          "locale": "pt_BR"
+        },
+        {
+          "description": "Unlimited notes, unlimited done list with search, Hey Siri and Shortcuts, create a note from Control Center, and choose your font.",
+          "displayName": "Bilhete Pro",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.dablab.bilhete.pro",
+      "referenceName": "Bilhete Pro",
+      "type": "NonConsumable"
+    }
+  ],
+  "settings": {
+    "_applicationInternalID": "F950FD1B-6CC1-4053-A67A-6A8769F5CE10",
+    "_developerTeamID": "",
+    "_lastSynchronizedDate": 0,
+    "_locale": "pt_BR",
+    "_storefront": "BRA",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 4,
+    "minor": 0
+  }
+}

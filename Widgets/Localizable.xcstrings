@@ -1,0 +1,258 @@
+{
+  "sourceLanguage": "pt-BR",
+  "strings": {
+    "control.new.description": {
+      "comment": "15 — descrição do Controle S10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens straight into the editor."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre direto no editor."
+          }
+        }
+      }
+    },
+    "control.new.name": {
+      "comment": "15 — nome do Controle S10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New note"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novo bilhete"
+          }
+        }
+      }
+    },
+    "control.repin.description": {
+      "comment": "15 — descrição do Controle S9",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puts your note back on the screen, without opening the app."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloca seu bilhete de volta na tela, sem abrir o app."
+          }
+        }
+      }
+    },
+    "control.repin.name": {
+      "comment": "15 — nome do Controle S9 na galeria",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pin note again"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refixar bilhete"
+          }
+        }
+      }
+    },
+    "widget.action.done": {
+      "comment": "8.4 — botão da Live Activity (S5/S8) e dos widgets de tela de início (S3/S4)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concluir"
+          }
+        }
+      }
+    },
+    "widget.action.pin": {
+      "comment": "8.5 — botão do systemMedium (S4); abre o app porque iniciar Live Activity exige foreground (L4)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pin"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixar"
+          }
+        }
+      }
+    },
+    "widget.action.unpin": {
+      "comment": "8.4 — botão da Live Activity; encerra sem arquivar (critério 8.4.5)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unpin"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soltar"
+          }
+        }
+      }
+    },
+    "widget.empty": {
+      "comment": "15.7 — widget sem bilhete em destaque",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No note"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem bilhete"
+          }
+        }
+      }
+    },
+    "widget.gallery.home.description": {
+      "comment": "15 — descrição de galeria das S3/S4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your featured note, one tap to finish it."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seu bilhete em destaque, com um toque pra concluir."
+          }
+        }
+      }
+    },
+    "widget.gallery.home.name": {
+      "comment": "15 — nome de galeria das S3/S4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete"
+          }
+        }
+      }
+    },
+    "widget.gallery.inline.description": {
+      "comment": "15 — descrição de galeria da S2",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The first line of your note, above the clock."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A primeira linha do seu bilhete, acima do relógio."
+          }
+        }
+      }
+    },
+    "widget.gallery.inline.name": {
+      "comment": "15 — nome de galeria da S2",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete (one line)"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete (uma linha)"
+          }
+        }
+      }
+    },
+    "widget.gallery.rectangular.description": {
+      "comment": "15 — descrição de galeria da S1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your featured note, always on the Lock Screen."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seu bilhete em destaque, sempre na tela de bloqueio."
+          }
+        }
+      }
+    },
+    "widget.gallery.rectangular.name": {
+      "comment": "15 — nome de galeria da S1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

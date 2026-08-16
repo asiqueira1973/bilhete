@@ -1,0 +1,145 @@
+// ============================================================================
+// Bilhete — modelo de dados
+// Gerado a partir da seção 7 do SDD-Bilhete.md (versão 1.2, 16/08/2026)
+// Cole em https://dbdiagram.io para visualizar.
+// ============================================================================
+//
+// NOTA DE LEITURA IMPORTANTE
+// O Bilhete não usa banco SQL: a persistência é SwiftData (SQLite sob o capô),
+// LOCAL ao aparelho, dentro do container do App Group. Este .dbml representa o
+// schema persistido para efeito de documentação e revisão.
+//
+// v1.1 — decisão D-1: o CloudKit saiu do escopo da v1. O MODELO NÃO MUDOU: as
+// restrições abaixo continuam valendo como regra de projeto, porque manter o
+// schema compatível com sincronização é o que permite religá-la na v2 sem
+// migração pesada.
+//
+// Grafia: snake_case aqui e na documentação; lowerCamelCase no código Swift.
+// Ex.: `arquivado_em` (aqui)  →  `arquivadoEm` (Swift).
+//
+// RESTRIÇÕES DE SCHEMA que este modelo obedece (seção 4.3 do spec):
+//   1. Proibido @Attribute(.unique) — nenhuma coluna abaixo é UNIQUE, nem `id`.
+//      (Vinha do CloudKit; mantida por compatibilidade futura.)
+//      A unicidade de `id` é garantida em código pela regra 11.13.
+//   2. Toda propriedade é opcional ou tem valor default.
+//   3. Todo relacionamento precisa ser opcional (não há relacionamento na v1).
+//   4. Se o sync for ligado na v2, só migração leve será possível — para sempre.
+//      Adicionar campo opcional é permitido; mudar tipo ou remover campo, não.
+//   5. Proibido Array/Set de primitivos em classes @Model (regressão do
+//      iOS 26.1 — risco R-1). Nenhum existe aqui. Há build phase que DERRUBA A
+//      COMPILAÇÃO se alguém adicionar, e teste que lê o schema real.
+// ============================================================================
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ENUMS
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Estado do bilhete no ciclo de vida. Máquina de estados na seção 12 do spec.
+enum estado_bilhete {
+  em_destaque [note: 'O bilhete da vez. Exatamente um por vez (regra 11.1). É o que aparece nos widgets e na Live Activity.']
+  guardado    [note: 'Na pilha, esperando a vez. Não aparece em nenhuma superfície do sistema.']
+  arquivado   [note: 'Encerrado. Restaurável. Não conta para o limite de ativos (regra 11.3).']
+}
+
+// Por onde o bilhete foi criado. Existe para contagem local (seção 21),
+// para medir se Siri e Controle valem o custo de manutenção.
+enum origem_bilhete {
+  app      [note: 'Criado dentro do app.']
+  siri     [note: 'Criado por comando de voz.']
+  atalho   [note: 'Criado por um Atalho.']
+  controle [note: 'Criado pelo Controle da Central de Controle ou pelo Botão de Ação.']
+  widget   [note: 'Criado pela ação de um widget de tela de início.']
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// TABELA — única entidade persistida da v1
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Classe SwiftData: Bilhete  ·  BilheteCore/Models/Bilhete.swift
+//
+// Constraints aplicadas EM CÓDIGO (o SwiftData não declara constraint no schema),
+// todas no BilheteStore — seção 13.1 do spec:
+//   · no máximo UM bilhete com estado = em_destaque              (regra 11.1)
+//   · texto com no máximo 280 caracteres                          (regra 11.2)
+//   · fixado_ate só pode ser não-nulo se estado = em_destaque     (invariante, seção 22)
+//   · id_atividade só pode ser não-nulo se estado = em_destaque   (invariante, seção 22)
+//   · arquivado_em não-nulo SE E SOMENTE SE estado = arquivado    (invariante, seção 22)
+//   · contagem de ativos (em_destaque + guardado) <= 3 sem Pro    (regra 11.3)
+//
+// Índices sugeridos (não declaráveis em SwiftData; registrados para a
+// documentação técnica e para eventual migração futura para GRDB):
+//   · por estado          — toda consulta filtra por ele
+//   · por arquivado_em ↓  — tela de arquivo (10.3)
+//
+// Estratégia de exclusão — híbrida e explícita (seção 7.2):
+//   · arquivar NÃO é excluir: é transição de estado, o dado permanece  (P4)
+//   · excluir é hard delete, irreversível, com confirmação             (copy 15.19)
+//   · poda do arquivo grátis: ao arquivar o 11º sem Pro, o de
+//     arquivado_em mais antigo é excluído definitivamente              (regra 11.4)
+//
+// Preparação para a v2 (seção 28.1): adicionar `casa_id` e `autor_id`
+// opcionais é permitido pela migração leve; mudar tipo ou remover campo, não.
+
+Table bilhete {
+  id            uuid           [pk, not null, default: `UUID()`, note: 'Identificador gerado no cliente. NÃO usa @Attribute(.unique). Unicidade garantida em código pela regra 11.13.']
+  texto         text           [not null, default: '', note: 'O conteúdo do bilhete. Texto puro, sem formatação. Máximo de 280 caracteres (regra 11.2), limitado pela altura de 84–160pt da Live Activity.']
+  estado        estado_bilhete [not null, default: 'guardado', note: 'Estado no ciclo de vida. Transições permitidas e proibidas na seção 12.']
+  ordem_pilha   integer        [not null, default: 0, note: 'Posição na pilha de guardados; menor valor = mais acima. Irrelevante para em_destaque e arquivado. Guardar insere no topo (min − 1); reordenar reescreve a sequência a partir de 0 (regra 11.5).']
+  fixado_ate    timestamp      [note: 'NULO quando o bilhete não está fixado — nunca esteve, já expirou, ou foi solto. Quando fixado, vale agora + 8h (regra 11.8), que é o limite ativo do sistema. É estado local do aparelho.']
+  id_atividade  text           [note: 'Activity.id da Live Activity em curso, para poder atualizar e encerrar. NULO quando não há atividade em curso. É estado local do aparelho.']
+  criado_em     timestamp      [not null, default: `now()`, note: 'Momento da criação. Nunca muda.']
+  atualizado_em timestamp      [not null, default: `now()`, note: 'Momento da última alteração de texto ou estado. Ordena a pilha na tela. (A regra 11.14, de conflito de sincronização, saiu na v1.1 — decisão D-1.)']
+  arquivado_em  timestamp      [note: 'NULO enquanto o bilhete não foi arquivado. Define a ordem da tela de arquivo e o corte dos 10 do plano grátis (regra 11.4).']
+  origem        origem_bilhete [not null, default: 'app', note: 'Por onde o bilhete foi criado. Contagem local apenas; nunca sai do aparelho (seção 21).']
+
+  Note: 'Única entidade persistida da v1. Modelo mínimo é decisão deliberada: reduz a exposição às restrições permanentes de migração do CloudKit (seção 4.3, item 4).'
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RELACIONAMENTOS
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// Não há nenhum na v1 — existe uma única entidade.
+// Isto é decisão de modelagem, não omissão. Ver seção 7.1 do spec.
+//
+// Na v2 (seção 28.1 — bilhete compartilhado) entra:
+//   Ref: bilhete.casa_id  > casa.id
+//   Ref: bilhete.autor_id > pessoa.id
+// Ambos como colunas OPCIONAIS, para caber em migração leve caso o sync
+// seja ligado na v2.
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FORA DO SWIFTDATA — documentado aqui por completude, NÃO persistido no store
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// `preferencias` (seção 7.3) vive em UserDefaults(suiteName: "group.com.dablab.bilhete").
+// Fica fora do SwiftData por dois motivos: são valores por aparelho (a fonte
+// preferida no iPad pode ser outra), e o widget precisa lê-los de forma síncrona
+// no render, sem abrir um ModelContainer.
+//
+//   aparencia             text     default 'sistema'   — sistema | claro | escuro
+//   fonte                 text     default 'padrao'    — padrao | mono | serifada (só padrao sem Pro)
+//   texto_pequeno         boolean  default false
+//   avisar_expiracao      boolean  default true        — liga o aviso da regra 11.7
+//   boasvindas_concluida  boolean  default false       — controla a tela 10.6
+//   dica_widget_vista     boolean  default false       — controla a dica 10.7
+//   pro_desbloqueado      boolean  default false       — CACHE; fonte de verdade é o StoreKit
+//   insistencias_widget   integer  default 0           — teto de 2 insistências (spec 9.4)
+//   ja_fixou_alguma_vez   boolean  default false       — metade da condição da regra 11.10
+//   permissao_notificacao_pedida boolean default false — pedido único (critério 8.7.5)
+//   idioma                text     default 'sistema'  — sistema | pt-BR | en (decisão D-8)
+//
+// `direito_pro` (seção 7.4) não é persistido. Fonte de verdade:
+// Transaction.currentEntitlements (StoreKit 2), lido no lançamento e observado
+// por Transaction.updates. Espelhado em preferencias.pro_desbloqueado apenas
+// para a widget extension aplicar o gating sem acessar o StoreKit.
+// Produto: com.dablab.bilhete.pro — não-consumível, R$ 19,90 (decisão D-3).
+//
+// NOTA DE NOMENCLATURA (v1.2, decisão D-10): na interface, o estado `arquivado`
+// aparece como "Concluído" e a tela chama-se "Concluídos". O valor persistido
+// **não** mudou — renomear o caso do enum mudaria o dado gravado, e só migração
+// leve é possível se o sync for ligado na v2.

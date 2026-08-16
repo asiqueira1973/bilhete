@@ -1,0 +1,2148 @@
+{
+  "sourceLanguage": "pt-BR",
+  "strings": {
+    "action.archive": {
+      "comment": "8.3 — barra inferior de 10.1. Mesmo nome do botão da Live Activity (D-9): é a mesma ação, e dois nomes confundiam",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concluir"
+          }
+        }
+      }
+    },
+    "action.cancel": {
+      "comment": "15.19",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        }
+      }
+    },
+    "action.copy": {
+      "comment": "14.1 — menu ••• de 10.1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copiar"
+          }
+        }
+      }
+    },
+    "action.delete": {
+      "comment": "15.19 — menu ••• de 10.1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir"
+          }
+        }
+      }
+    },
+    "action.doneTyping": {
+      "comment": "10.1 — botão da barra do teclado; fecha o teclado para ver o bilhete inteiro",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronto"
+          }
+        }
+      }
+    },
+    "action.more": {
+      "comment": "VoiceOver do menu ••• de 10.1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More actions"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mais ações"
+          }
+        }
+      }
+    },
+    "action.pin": {
+      "comment": "8.4 — barra inferior de 10.1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pin"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixar"
+          }
+        }
+      }
+    },
+    "action.repin": {
+      "comment": "8.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pin again"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refixar"
+          }
+        }
+      }
+    },
+    "action.share": {
+      "comment": "14.1 — menu ••• de 10.1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartilhar"
+          }
+        }
+      }
+    },
+    "action.stash": {
+      "comment": "8.2 — barra inferior de 10.1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Put away"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar"
+          }
+        }
+      }
+    },
+    "action.unpin": {
+      "comment": "8.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unpin"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soltar"
+          }
+        }
+      }
+    },
+    "archive.deleteAll": {
+      "comment": "10.3 — rodapé",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete all"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apagar tudo"
+          }
+        }
+      }
+    },
+    "archive.deleteAll.body": {
+      "comment": "8.3.6",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That's %d notes. This can't be undone."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "São %d bilhetes. Não dá pra desfazer."
+          }
+        }
+      }
+    },
+    "archive.deleteAll.title": {
+      "comment": "8.3.6 — confirmação destrutiva",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete all done notes?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apagar todos os concluídos?"
+          }
+        }
+      }
+    },
+    "archive.empty.body": {
+      "comment": "15.3, adaptada ao nome novo (D-10)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A note you've handled is a note you finish."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete resolvido é bilhete concluído."
+          }
+        }
+      }
+    },
+    "archive.empty.title": {
+      "comment": "15.3, adaptada ao nome novo (D-10)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing done yet."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada concluído ainda."
+          }
+        }
+      }
+    },
+    "archive.restore": {
+      "comment": "8.3 — ação por item",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar"
+          }
+        }
+      }
+    },
+    "archive.search": {
+      "comment": "10.3 — campo de busca (capacidade Pro)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar"
+          }
+        }
+      }
+    },
+    "archive.search.empty": {
+      "comment": "10.3 — busca sem resultado",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing found."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada encontrado."
+          }
+        }
+      }
+    },
+    "archive.title": {
+      "comment": "10.3 — título da tela. Renomeado de \"Arquivo\" (D-10): o lugar leva o nome da ação que leva até ele",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concluídos"
+          }
+        }
+      }
+    },
+    "badge.pro": {
+      "comment": "Selo de capacidade Pro (matriz da seção 5)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRO"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRO"
+          }
+        }
+      }
+    },
+    "concepts.done.body": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It's the \"I've handled it\". The note leaves the screen and goes to Done, where you can bring it back if you need. The Done button on the Lock Screen does exactly the same thing, without opening the app."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "É o \"resolvi isso\". O bilhete sai da tela e vai para Concluídos, de onde pode voltar se você precisar. O botão Concluir da tela de bloqueio faz exatamente a mesma coisa, sem abrir o app."
+          }
+        }
+      }
+    },
+    "concepts.done.title": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concluir"
+          }
+        }
+      }
+    },
+    "concepts.intro": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One note at a time is featured — and that's the one that shows on your Lock Screen. The rest wait their turn."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um bilhete por vez fica em destaque — e é ele que aparece na sua tela de bloqueio. O resto espera a vez."
+          }
+        }
+      }
+    },
+    "concepts.limits.body": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Without Pro, three active notes at a time — the featured one plus the ones you put away. Done notes don't count."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem o Pro, três bilhetes ativos ao mesmo tempo — o em destaque mais os guardados. Os concluídos não contam."
+          }
+        }
+      }
+    },
+    "concepts.limits.title": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many fit"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quantos cabem"
+          }
+        }
+      }
+    },
+    "concepts.pin.body": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puts the note big on the Lock Screen, for 8 hours. After that iPhone ends it on its own — a system limit, not the app's — and you pin it again whenever you want."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Põe o bilhete grande na tela de bloqueio, por 8 horas. Depois disso o iPhone encerra sozinho — é limite do sistema, não do app — e você fixa de novo quando quiser."
+          }
+        }
+      }
+    },
+    "concepts.pin.title": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pin"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixar"
+          }
+        }
+      }
+    },
+    "concepts.stash.body": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sends the note to the stack and opens a blank one. It's the \"not now\": it stays active and comes back with one tap."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manda o bilhete para a pilha e abre um novo em branco. É o \"agora não\": ele continua ativo e volta ao destaque com um toque."
+          }
+        }
+      }
+    },
+    "concepts.stash.title": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Put away"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar"
+          }
+        }
+      }
+    },
+    "concepts.title": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How Bilhete works"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como o Bilhete funciona"
+          }
+        }
+      }
+    },
+    "concepts.unpin.body": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takes the note off the Lock Screen without finishing it. It stays featured in the app, untouched."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tira o bilhete da tela de bloqueio sem concluir. Ele continua em destaque no app, inteiro."
+          }
+        }
+      }
+    },
+    "concepts.unpin.title": {
+      "comment": "D-10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unpin"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soltar"
+          }
+        }
+      }
+    },
+    "delete.confirm.body": {
+      "comment": "15.19",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This can't be undone."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não dá pra desfazer."
+          }
+        }
+      }
+    },
+    "delete.confirm.title": {
+      "comment": "15.19",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete this note?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir este bilhete?"
+          }
+        }
+      }
+    },
+    "editor.accessibility": {
+      "comment": "VoiceOver do editor (spec 17)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Featured note"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete em destaque"
+          }
+        }
+      }
+    },
+    "editor.counter": {
+      "comment": "11.2 — contador a partir de 240",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$d of %2$d characters"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$d de %2$d caracteres"
+          }
+        }
+      }
+    },
+    "editor.placeholder": {
+      "comment": "15.1 — placeholder e seed (7.7)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Write what you don't want to forget"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escreva o que você não quer esquecer"
+          }
+        }
+      }
+    },
+    "error.save.body": {
+      "comment": "15.5",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your text is still here. I'll try again shortly."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seu texto continua aqui. Vou tentar de novo em instantes."
+          }
+        }
+      }
+    },
+    "error.save.title": {
+      "comment": "15.5",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't save right now"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não consegui salvar agora"
+          }
+        }
+      }
+    },
+    "guide.card.body": {
+      "comment": "9.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With the widget it stays for good. Tap to see how."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Com o widget ele fica pra sempre. Toque pra ver como."
+          }
+        }
+      }
+    },
+    "guide.card.title": {
+      "comment": "9.4 — cartão dispensável no rodapé do destaque",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your note leaves the screen in 12 hours"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seu bilhete some da tela em 12 horas"
+          }
+        }
+      }
+    },
+    "guide.done": {
+      "comment": "10.7 — botão de fechar",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronto"
+          }
+        }
+      }
+    },
+    "guide.step1.body": {
+      "comment": "10.7 — bloco 1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press and hold the Lock Screen, tap Customize, pick the screen and tap the area below the clock. Look for Bilhete."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segure a tela de bloqueio, toque em Personalizar, escolha a tela e toque na área abaixo do relógio. Procure por Bilhete."
+          }
+        }
+      }
+    },
+    "guide.step1.title": {
+      "comment": "10.7 — bloco 1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Lock Screen widget"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O widget na tela de bloqueio"
+          }
+        }
+      }
+    },
+    "guide.step2.body": {
+      "comment": "10.7 — bloco 2",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On the same customize screen, tap the flashlight or camera button and swap it for Pin note again. One tap puts your note back on the screen."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na mesma tela de personalizar, toque no botão da lanterna ou da câmera e troque por Refixar bilhete. Um toque devolve seu bilhete pra tela."
+          }
+        }
+      }
+    },
+    "guide.step2.title": {
+      "comment": "10.7 — bloco 2",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The control instead of the flashlight"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Controle no lugar da lanterna"
+          }
+        }
+      }
+    },
+    "guide.step3.body": {
+      "comment": "10.7 — bloco 3, explica L1 e L2",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The big highlight is a Live Activity, and iPhone ends every Live Activity after 12 hours. The widget has no such limit — that's why it's what holds your note."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O destaque grande é uma Atividade ao Vivo, e o iPhone encerra toda Atividade ao Vivo depois de 12 horas. O widget não tem esse limite — por isso ele é o que segura seu bilhete."
+          }
+        }
+      }
+    },
+    "guide.step3.title": {
+      "comment": "10.7 — bloco 3",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Why the note leaves the screen"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por que o bilhete sai da tela"
+          }
+        }
+      }
+    },
+    "guide.title": {
+      "comment": "10.7",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to put it on the Lock Screen"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como colocar na tela de bloqueio"
+          }
+        }
+      }
+    },
+    "hint.flow": {
+      "comment": "10.1 — explicação do fluxo, mostrada enquanto a pessoa ainda não guardou nem concluiu nada",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One note at a time. Pin puts it on the Lock Screen; Put away is for later; Done is when you've handled it."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um bilhete por vez na tela. Fixar põe ele na tela de bloqueio; Guardar deixa pra depois; Concluir é quando você resolveu."
+          }
+        }
+      }
+    },
+    "nav.done": {
+      "comment": "10.3 — acesso no topo de 10.1 (D-10)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concluídos"
+          }
+        }
+      }
+    },
+    "nav.settings": {
+      "comment": "10.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
+          }
+        }
+      }
+    },
+    "nav.stack": {
+      "comment": "10.2 — acesso no topo de 10.1",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stack"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilha"
+          }
+        }
+      }
+    },
+    "nav.stack.count": {
+      "comment": "VoiceOver do contador da pilha",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stack, %d put away"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilha, %d guardados"
+          }
+        }
+      }
+    },
+    "notif.permission.body": {
+      "comment": "15.10",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To keep your note on the Lock Screen, iPhone needs your permission. Just once."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pra deixar o bilhete na sua tela de bloqueio, o iPhone precisa da sua permissão. É só uma vez."
+          }
+        }
+      }
+    },
+    "notif.permission.ok": {
+      "comment": "15.10 — botão; a seção 15 não define esta copy",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Got it"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entendi"
+          }
+        }
+      }
+    },
+    "paywall.buy": {
+      "comment": "10.5 — botão de compra; o preço vem do StoreKit (critério 8.9.2)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buy for %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comprar por %@"
+          }
+        }
+      }
+    },
+    "paywall.close": {
+      "comment": "10.5",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fechar"
+          }
+        }
+      }
+    },
+    "paywall.item1": {
+      "comment": "15.18",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited notes"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhetes sem limite"
+          }
+        }
+      }
+    },
+    "paywall.item2": {
+      "comment": "15.18",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited archive, with search"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arquivo sem limite, com busca"
+          }
+        }
+      }
+    },
+    "paywall.item3": {
+      "comment": "15.18",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hey Siri, and Shortcuts"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ei Siri, e Atalhos"
+          }
+        }
+      }
+    },
+    "paywall.item4": {
+      "comment": "15.18",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your font"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolher a fonte"
+          }
+        }
+      }
+    },
+    "paywall.item5": {
+      "comment": "15.18 — substitui \"Refixar pela tela de bloqueio\", que virou grátis (D-12)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a note from Control Center"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Criar bilhete pela Central de Controle"
+          }
+        }
+      }
+    },
+    "paywall.offline.body": {
+      "comment": "15.12",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I need internet to load the price. Try again in a moment."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preciso de internet pra buscar o preço. Tente de novo daqui a pouco."
+          }
+        }
+      }
+    },
+    "paywall.offline.title": {
+      "comment": "15.12",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No connection"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem conexão"
+          }
+        }
+      }
+    },
+    "paywall.owned": {
+      "comment": "10.5 — estado de já comprado",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete Pro ✓"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete Pro ✓"
+          }
+        }
+      }
+    },
+    "paywall.restore": {
+      "comment": "10.5 — exigência de App Review",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore purchases"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar compras"
+          }
+        }
+      }
+    },
+    "paywall.subtitle": {
+      "comment": "15.17",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One purchase. Forever."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma compra. Pra sempre."
+          }
+        }
+      }
+    },
+    "paywall.terms": {
+      "comment": "10.5 — rodapé",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terms and privacy"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termos e privacidade"
+          }
+        }
+      }
+    },
+    "paywall.title": {
+      "comment": "15.17",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete Pro"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete Pro"
+          }
+        }
+      }
+    },
+    "pin.badge": {
+      "comment": "10.1 — selo do estado fixado; a seção 15 não define esta copy",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On screen until %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na tela até %@"
+          }
+        }
+      }
+    },
+    "pin.unavailable.body": {
+      "comment": "15.6",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live Activities are turned off for Bilhete in iPhone Settings."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As Atividades ao Vivo estão desligadas para o Bilhete nos Ajustes do iPhone."
+          }
+        }
+      }
+    },
+    "pin.unavailable.settings": {
+      "comment": "15.6 — botão",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Ajustes"
+          }
+        }
+      }
+    },
+    "pin.unavailable.title": {
+      "comment": "15.6",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can't pin right now"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não dá pra fixar agora"
+          }
+        }
+      }
+    },
+    "pro.notice.body": {
+      "comment": "15.8",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One purchase, forever."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma compra só, pra sempre."
+          }
+        }
+      }
+    },
+    "pro.notice.see": {
+      "comment": "15.4 — botão que leva ao paywall (10.5)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See Pro"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver o Pro"
+          }
+        }
+      }
+    },
+    "pro.notice.title": {
+      "comment": "15.8",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That's in Bilhete Pro"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isso é do Bilhete Pro"
+          }
+        }
+      }
+    },
+    "prune.body": {
+      "comment": "15.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Without Pro the archive holds 10 notes. Archiving this one deletes \"%@\" for good."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem o Pro cabem 10 bilhetes no arquivo. Arquivar este apaga \"%@\" de vez."
+          }
+        }
+      }
+    },
+    "prune.confirm": {
+      "comment": "15.4 — botão",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archive anyway"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arquivar mesmo assim"
+          }
+        }
+      }
+    },
+    "prune.title": {
+      "comment": "15.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your archive is full"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seu arquivo está cheio"
+          }
+        }
+      }
+    },
+    "settings.about": {
+      "comment": "10.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobre"
+          }
+        }
+      }
+    },
+    "settings.appearance": {
+      "comment": "10.4 — 7.3 chave aparencia",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appearance"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aparência"
+          }
+        }
+      }
+    },
+    "settings.appearance.dark": {
+      "comment": "7.3",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escuro"
+          }
+        }
+      }
+    },
+    "settings.appearance.light": {
+      "comment": "7.3",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claro"
+          }
+        }
+      }
+    },
+    "settings.appearance.system": {
+      "comment": "7.3",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistema"
+          }
+        }
+      }
+    },
+    "settings.export": {
+      "comment": "14.2 — portabilidade (LGPD art. 18)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export everything"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportar tudo"
+          }
+        }
+      }
+    },
+    "settings.export.note": {
+      "comment": "D-1 — sem sincronização, esta é a única saída de dados",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your notes live only on this iPhone. Exporting is your backup."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seus bilhetes ficam só neste iPhone. Exportar é o seu backup."
+          }
+        }
+      }
+    },
+    "settings.feedback": {
+      "comment": "10.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send feedback"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar feedback"
+          }
+        }
+      }
+    },
+    "settings.font": {
+      "comment": "10.4 — capacidade Pro (seção 5)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Font"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fonte"
+          }
+        }
+      }
+    },
+    "settings.font.default": {
+      "comment": "16.3 — SF Pro",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padrão"
+          }
+        }
+      }
+    },
+    "settings.font.mono": {
+      "comment": "16.3 — SF Mono",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mono"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mono"
+          }
+        }
+      }
+    },
+    "settings.font.serif": {
+      "comment": "16.3 — New York",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serif"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serifada"
+          }
+        }
+      }
+    },
+    "settings.guide": {
+      "comment": "10.7 — a um toque dos Ajustes (critério 8.10.4)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to put it on the Lock Screen"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como colocar na tela de bloqueio"
+          }
+        }
+      }
+    },
+    "settings.howItWorks": {
+      "comment": "10.4 — abre a tela de conceitos (D-10)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How Bilhete works"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como o Bilhete funciona"
+          }
+        }
+      }
+    },
+    "settings.language": {
+      "comment": "10.4 — seletor de idioma dentro do app",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idioma"
+          }
+        }
+      }
+    },
+    "settings.language.en": {
+      "comment": "10.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "English"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inglês"
+          }
+        }
+      }
+    },
+    "settings.language.pt": {
+      "comment": "10.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Portuguese"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Português"
+          }
+        }
+      }
+    },
+    "settings.language.system": {
+      "comment": "10.4 — segue o iPhone (critério 8.11.3)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistema"
+          }
+        }
+      }
+    },
+    "settings.privacy": {
+      "comment": "10.4 — link D-5",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy policy"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de privacidade"
+          }
+        }
+      }
+    },
+    "settings.pro": {
+      "comment": "10.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete Pro"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete Pro"
+          }
+        }
+      }
+    },
+    "settings.pro.active": {
+      "comment": "10.4 — estado com Pro ativo",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete Pro ✓"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete Pro ✓"
+          }
+        }
+      }
+    },
+    "settings.rate": {
+      "comment": "10.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rate Bilhete"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avaliar o Bilhete"
+          }
+        }
+      }
+    },
+    "settings.restore": {
+      "comment": "10.4 — exigência de App Review",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore purchases"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar compras"
+          }
+        }
+      }
+    },
+    "settings.smallText": {
+      "comment": "7.3 — chave texto_pequeno",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Small text"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto pequeno"
+          }
+        }
+      }
+    },
+    "settings.support": {
+      "comment": "10.4 — link D-5",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Support"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suporte"
+          }
+        }
+      }
+    },
+    "settings.title": {
+      "comment": "10.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
+          }
+        }
+      }
+    },
+    "settings.version": {
+      "comment": "10.4",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versão %@"
+          }
+        }
+      }
+    },
+    "settings.warn": {
+      "comment": "7.3 — regra 11.7",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warn before it expires"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avisar antes de expirar"
+          }
+        }
+      }
+    },
+    "stack.counter": {
+      "comment": "10.2 — contador no limite grátis (11.3)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$d of %2$d"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$d de %2$d"
+          }
+        }
+      }
+    },
+    "stack.empty.body": {
+      "comment": "15.2",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Whatever is featured shows on your screen."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O que estiver em destaque aparece na sua tela."
+          }
+        }
+      }
+    },
+    "stack.empty.button": {
+      "comment": "8.2 — botão do estado vazio",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to the featured note"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltar ao destaque"
+          }
+        }
+      }
+    },
+    "stack.empty.title": {
+      "comment": "15.2",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing saved."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada guardado."
+          }
+        }
+      }
+    },
+    "stack.featured.badge": {
+      "comment": "10.2 — selo do bilhete em destaque, listado no topo da pilha (D-11)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "on screen"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "na tela"
+          }
+        }
+      }
+    },
+    "stack.promote.hint": {
+      "comment": "VoiceOver do item da pilha (8.2)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap to feature this note"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque para pôr em destaque"
+          }
+        }
+      }
+    },
+    "stack.title": {
+      "comment": "10.2 — título da tela",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stack"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilha"
+          }
+        }
+      }
+    },
+    "welcome.button": {
+      "comment": "15.13 — botão único",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Write the first one"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escrever o primeiro"
+          }
+        }
+      }
+    },
+    "welcome.subtitle": {
+      "comment": "15.13",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One note at a time, on your Lock Screen."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um recado por vez, na sua tela de bloqueio."
+          }
+        }
+      }
+    },
+    "welcome.title": {
+      "comment": "15.13 — título da tela de boas-vindas (10.6)",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilhete"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,12 @@
+// Configuração de build do Bilhete (spec 18.5).
+// Nenhum destes valores é segredo — o app não tem chave de API, endpoint nem token.
+// CLOUDKIT_CONTAINER foi removido pela decisão D-1 (sem CloudKit, sem sincronização).
+
+BUNDLE_ID = com.dablab.bilhete
+APP_GROUP = group.com.dablab.bilhete
+PRODUTO_PRO = com.dablab.bilhete.pro
+
+MARKETING_VERSION = 1.0
+CURRENT_PROJECT_VERSION = 1
+// Conta Apple Developer do Alexandre. Necessário para instalar em aparelho.
+DEVELOPMENT_TEAM = XGZW6Y6K25
