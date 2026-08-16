@@ -1,15 +1,25 @@
 # SDD — Bilhete
 
-**Versão do documento:** 1.2
+**Versão do documento:** 1.3
 **Produto:** Bilhete — nota na tela de bloqueio
 **Responsável de produto:** Alexandre Siqueira (Dab Lab)
-**Status:** implementado — v1 construída em 15/08/2026, pendências de validação na seção 22
-**Data:** 15/08/2026 (v1.0) · 15/08/2026 (v1.1) · 16/08/2026 (v1.2)
+**Status:** v1.0 (build 1) submetida à revisão da App Store em 16/08/2026, com o produto de compra junto; pendências de validação na seção 22
+**Data:** 15/08/2026 (v1.0) · 15/08/2026 (v1.1) · 16/08/2026 (v1.2) · 16/08/2026 (v1.3)
 **Plataforma:** iOS — **iPhone apenas**
 
 ---
 
 ## Registro de alterações
+
+### v1.3 — 16/08/2026
+
+Nenhuma decisão nova e nenhuma mudança de escopo — a v1.0 já estava em revisão na
+App Store quando esta versão foi escrita. Registra duas coisas:
+
+| O quê | Onde |
+|---|---|
+| **A prateleira**: guardar usado como estoque de lembretes reutilizáveis, e não como fila. Uso observado depois do app pronto, já suportado pela v1, com consequência comercial (é um uso de Pro) e de copy (o vocabulário do produto só descreve a fila). | 2 |
+| Status do documento atualizado para "submetida à revisão". | cabeçalho |
 
 ### v1.2 — 16/08/2026
 
@@ -125,6 +135,40 @@ Não é usuária avançada. Não vai descobrir sozinha que existe um widget, que
 
 ### O momento mais difícil
 São 15h. A pessoa fixou o bilhete às 7h. Às 15h a Live Activity morreu por imposição do sistema, sumiu da Dynamic Island e vai sumir da tela de bloqueio até as 19h. **Se o app não fizer nada, a pessoa acha que perdeu o bilhete.** A resposta do Bilhete a esse momento é a soma de três coisas: o widget permanente que continua lá, o aviso de expiração 30 minutos antes, e o Controle da Central de Controle que refixa em um toque sem abrir o app.
+
+### A prateleira — um segundo uso, observado depois de pronto
+
+Descoberto pelo Alexandre usando o app, em 16/08/2026, e registrado aqui porque
+**não foi previsto no desenho**: guardar não serve só de fila, serve de
+**prateleira de lembretes reutilizáveis**.
+
+A pessoa deixa guardados bilhetes que se repetem — "pôr o computador na mochila",
+"passar na padaria", "levar o guarda-chuva" — e vai fixando cada um quando o
+contexto pede. O bilhete nunca é concluído: sai da tela pelo **Soltar**, volta
+para a pilha pelo **Guardar**, e fica disponível para a próxima vez.
+
+**A v1 já suporta isso, sem código novo.** Nada expira um bilhete guardado, e a
+poda da regra 11.4 só alcança os concluídos. O caminho de volta também existe se
+a pessoa concluir por engano: restaurar devolve o bilhete ao topo da pilha
+(épico 8.3).
+
+Três consequências que valem estar escritas:
+
+1. **É um uso de Pro na prática.** Uma prateleira útil tem mais de três itens, e
+   o limite de 3 ativos do plano grátis (regra 11.3) inclui os guardados. Este é
+   o argumento de venda mais concreto que apareceu até agora, e **não está em
+   lugar nenhum da ficha da loja** nem da copy da seção 15.
+2. **O vocabulário do produto descreve só a fila.** "Guardar é o agora não"
+   (seção 15) e "o que pode esperar fica atrás" descrevem algo temporário. A
+   prateleira é o oposto: permanente e recorrente. Mesma mecânica, modelo mental
+   diferente, e nenhum texto do app nomeia o segundo.
+3. **Ela roça o item 28.2 sem precisar dele.** Prateleira parece pedir
+   recorrência, mas não pede: um bilhete que nunca é concluído já é recorrente
+   por omissão. Antes de construir prazo e recorrência, vale checar se o que as
+   pessoas queriam era só isto.
+
+Nada disso muda a v1. Fica como hipótese a observar nas avaliações e no uso —
+se confirmar, a resposta provavelmente é copy, não feature.
 
 ---
 
