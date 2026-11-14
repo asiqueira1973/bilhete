@@ -1,115 +1,106 @@
 # Bilhete
 
-App iOS que deixa uma nota na tela de bloqueio. Um bilhete em destaque por vez;
-os outros ficam numa pilha atrás.
+App iOS que deixa uma nota na tela de bloqueio: um bilhete em destaque por vez, e os outros numa pilha atrás.
 
-- **Fonte de verdade do produto:** [`SDD-Bilhete.md`](SDD-Bilhete.md)
-- **Regras permanentes do projeto:** [`CLAUDE.md`](CLAUDE.md) — inclui as decisões
-  D-1 a D-6, que **vencem o spec** onde houver conflito
-- **Como ficou implementado:** [`DOCUMENTACAO-TECNICA.md`](DOCUMENTACAO-TECNICA.md)
+[Baixar na App Store](https://apps.apple.com/br/app/bilhete/id6802047520)
 
-## Setup local
+<p>
+  <img src="app-store/telas/02-destaque.png" alt="Bilhete em destaque" width="200">
+  <img src="app-store/telas/04-tela-de-bloqueio.png" alt="Bilhete na tela de bloqueio" width="200">
+  <img src="app-store/telas/05-pilha.png" alt="Pilha de bilhetes" width="200">
+</p>
 
-Requer Xcode 26+ e XcodeGen (`brew install xcodegen`).
+## Principais funcionalidades
+
+- Bilhete em destaque com edição direta e salvamento automático.
+- Fixação na tela de bloqueio e na Dynamic Island via Live Activity, com botão de concluir.
+- Pilha de bilhetes guardados, com promoção a destaque e reordenação; concluídos ficam numa lista própria, com restaurar e excluir.
+- Widgets de tela de início e de tela de bloqueio.
+- Controle da Central de Controle e Botão de Ação para refixar e criar bilhete; Siri e Atalhos.
+- Aviso opcional (notificação local) antes de a fixação expirar.
+- Armazenamento 100% local, sem conta e sem sincronização, com exportação de tudo.
+- Compra única "Bilhete Pro" (StoreKit 2); escrever, fixar, ver e concluir são grátis.
+- Português do Brasil e inglês, com seletor de idioma no app.
+
+## Stack técnica
+
+- Swift, SwiftUI, iOS 18+ (só iPhone)
+- SwiftData local num App Group, compartilhado entre app e widgets pelo Swift Package `BilheteCore`
+- ActivityKit (Live Activity), WidgetKit (widgets e Controles), App Intents (Siri, Atalhos, Botão de Ação)
+- StoreKit 2 (compra não-consumível), UserNotifications (aviso local)
+- XcodeGen (`project.yml`), XCTest e XCUITest, String Catalog gerado por script Python
+
+## Como foi construído
+
+O app foi desenvolvido com Claude (Anthropic) a partir de uma especificação SDD, o [`SDD-Bilhete.md`](SDD-Bilhete.md), com o modelo de dados em [`modelo-bilhete.dbml`](modelo-bilhete.dbml). As decisões tomadas depois da spec, que prevalecem sobre ela, estão no [`CLAUDE.md`](CLAUDE.md), e o sistema como foi implementado, com as divergências, em [`DOCUMENTACAO-TECNICA.md`](DOCUMENTACAO-TECNICA.md).
+
+O que existe no repositório para manter a qualidade:
+
+- [`CLAUDE.md`](CLAUDE.md) com as regras permanentes lidas pelo Claude Code a cada sessão: decisões de produto, convenções, regras de plataforma que não podem ser quebradas e os números de negócio (todos vindos da spec).
+- Testes automatizados (`BilheteTests/`) das invariantes do modelo, das regras numéricas, da máquina de estados, do editor, da Live Activity, das restrições dos widgets, dos intents e Controles, do armazenamento, do StoreKit e da localização.
+- Uma guarda de build ([`Scripts/check-no-model-collections.sh`](Scripts/check-no-model-collections.sh)) que roda antes de compilar e derruba o build se alguma classe `@Model` declarar propriedade `Array` ou `Set` (proteção contra uma falha de migração conhecida do SwiftData).
+- Teste de UI (`BilheteUITests/`) que gera o print do paywall para a revisão da compra no App Store Connect.
+
+## Status
+
+Publicado na App Store (iOS).
+
+## Como rodar
+
+Requer Xcode 26+ e [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`).
 
 ```bash
-cd ~/Bilhete && xcodegen generate && open Bilhete.xcodeproj
+xcodegen generate && open Bilhete.xcodeproj
 ```
 
-O `.xcodeproj` é **gerado** — não edite pelo Xcode esperando que a mudança
-sobreviva. Alterou target, arquivo ou configuração? Mexa no `project.yml` e rode
-`xcodegen generate` de novo.
+O `.xcodeproj` é gerado e não é versionado: mudanças de target, arquivo ou configuração vão no `project.yml`, seguidas de `xcodegen generate`. Para instalar num aparelho, troque o `DEVELOPMENT_TEAM` em `Bilhete.xcconfig` pelo seu time.
 
-## Estrutura
-
-```
-Bilhete/
-├── project.yml                  ← a verdade sobre targets e configuração
-├── Bilhete.xcconfig             ← bundle id, App Group, produto do StoreKit
-├── Bilhete.storekit             ← loja local para desenvolvimento e teste
-├── Packages/BilheteCore/        ← tudo que app e widget compartilham
-│   └── Sources/BilheteCore/
-│       ├── Models/              ← @Model, enums e schema versionado (spec 7)
-│       ├── Store/               ← BilheteStore, container, exportação (13.1)
-│       ├── Intents/             ← todos os App Intents (13.3)
-│       ├── Entitlement/         ← EntitlementStore e PaywallGate (13.4)
-│       ├── LiveActivity/        ← BilheteAttributes e PinService (13.2)
-│       ├── Notifications/       ← aviso de expiração e avisos de Controle
-│       ├── Preferences/         ← UserDefaults do App Group (7.3)
-│       └── Resources/           ← paleta e strings compartilhadas
-├── App/                         ← target principal, uma pasta por tela
-├── Widgets/                     ← 4 widgets, Live Activity e 2 Controles
-├── BilheteTests/                ← 105 testes
-├── BilheteUITests/              ← captura do print da loja
-└── Scripts/                     ← guarda da invariante 22.4
-```
-
-## Capabilities a habilitar no portal da Apple
-
-| Capability | Onde | Valor |
-|---|---|---|
-| App Groups | app **e** widget extension | `group.com.dablab.bilhete` |
-| Live Activities | app | `NSSupportsLiveActivities` já no `Info.plist` |
-| Push Notifications | — | **não é necessária.** Não há push; a renovação da fixação é sempre ato do usuário (L4, L7) |
-| iCloud / CloudKit | — | **não é necessária** (decisão D-1: o app é local) |
-
-## Como rodar os testes
+Testes:
 
 ```bash
 xcodebuild test -scheme Bilhete -destination 'platform=iOS Simulator,name=iPhone 17 Pro' -only-testing:BilheteTests
 ```
 
-São 105 casos em 12 suítes: as 4 invariantes do modelo, uma bateria por regra
-numérica da seção 11, a máquina de estados inteira (permitidas e proibidas), o
-editor, o arquivo, o `PinService`, as restrições dos widgets, os intents e
-Controles, o armazenamento, o StoreKit e a localização.
-
-**A guarda da invariante 22.4 não é um teste, é uma build phase.** Adicionar uma
-propriedade `Array` ou `Set` a uma classe `@Model` **derruba a compilação**:
-
-```
-error: .../Bilhete.swift declara propriedade Array/Set em classe @Model —
-proibido pela invariante 22.4 / regra 4.3 do spec (risco R-1).
-** BUILD FAILED **
-```
-
-Para rodar a guarda à mão:
+Guarda do modelo, à mão:
 
 ```bash
-SRCROOT=~/Bilhete bash Scripts/check-no-model-collections.sh
+SRCROOT="$PWD" bash Scripts/check-no-model-collections.sh
 ```
 
-## Print do in-app purchase para o App Store Connect
+### Estrutura
 
-O App Store Connect exige uma imagem da tela de compra na revisão do produto.
-O arquivo pronto está em `app-store/bilhete-pro-iap-1242x2688.png`. Para gerar de
-novo depois de mexer no paywall:
-
-```bash
-xcodebuild test -scheme Bilhete -destination 'platform=iOS Simulator,name=iPhone 17 Pro' -only-testing:BilheteUITests
+```
+project.yml                  ← targets e configuração (XcodeGen)
+Bilhete.xcconfig             ← bundle id, App Group, produto do StoreKit
+Bilhete.storekit             ← loja local para desenvolvimento e teste
+Packages/BilheteCore/        ← tudo que app e widget compartilham
+  Sources/BilheteCore/
+    Models/                  ← @Model, enums e schema versionado
+    Store/                   ← BilheteStore, container, exportação
+    Intents/                 ← App Intents
+    Entitlement/             ← EntitlementStore e PaywallGate
+    LiveActivity/            ← BilheteAttributes e PinService
+    Notifications/           ← aviso de expiração
+    Preferences/             ← UserDefaults do App Group
+    Resources/               ← paleta e strings compartilhadas
+App/                         ← target principal, uma pasta por tela
+Widgets/                     ← widgets, Live Activity e Controles
+BilheteTests/                ← testes de unidade
+BilheteUITests/              ← captura do print da loja
+Scripts/                     ← guarda do modelo e gerador do String Catalog
+design/                      ← telas desenhadas no Claude Design
 ```
 
-O teste liga a loja local (`SKTestSession`), abre o paywall com o preço real do
-StoreKit e salva o PNG; o caminho sai no log como `PAYWALL_SCREENSHOT_PATH=`.
-Depois é só redimensionar para 1242 × 2688.
+O que só se valida em aparelho real (Controle na tela de bloqueio, Botão de Ação, Siri por voz, legibilidade dos widgets, desempenho) está listado na seção de pendências da documentação técnica.
 
-## Configurar o produto no App Store Connect
+## Licença
 
-| Campo | Valor |
-|---|---|
-| Tipo | Não-consumível |
-| ID do produto | `com.dablab.bilhete.pro` |
-| Nome de referência | Bilhete Pro |
-| Preço | R$ 19,90 (decisão D-3 — o app **nunca** exibe preço fixo, sempre o do StoreKit) |
-| Print de revisão | `app-store/bilhete-pro-iap-1242x2688.png` |
+O código está disponível apenas para leitura e estudo. Veja [LICENSE](LICENSE).
 
-O mesmo id vive em três lugares e precisa bater: `Bilhete.xcconfig`
-(`PRODUTO_PRO`), `Bilhete.storekit` e `AppConfig.proProductID`.
+## Contribuições
 
-## O que só se valida em aparelho real
+Issues são bem-vindas; pull requests não são aceitos. Veja [CONTRIBUTING.md](CONTRIBUTING.md).
 
-O simulador não prova: Controle na tela de bloqueio no lugar da lanterna, o
-Botão de Ação, o acionamento do Controle com o app fechado dentro dos 3 segundos,
-Siri por voz, legibilidade dos widgets em `vibrant` com papel de parede de alto
-contraste, e os números de desempenho da seção 17 medidos em iPhone 12. A lista
-completa está na seção de pendências da documentação técnica.
+---
+
+Feito pela [Dab Lab](https://www.dablab.com.br/) — agência de inovação no-code para startups e PMEs, com automações usando IA.
